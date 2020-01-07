@@ -1,24 +1,36 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import ListItem from '../ListItem'
+import { Link } from 'react-router-dom'
 import './Product.scss'
 
 export const Product = ({ name, quantity, price, currency }) => {
   return (
     <ListItem
       className="product"
-      details={[
-        <p key={name} className="product__name">
-          {name}
-        </p>,
-        <p key={name} className="product__quantity">
-          {quantity}
-        </p>,
-        <p key={price} className="product__price">
-          <span>{currency}</span> {price}
-        </p>
-      ]}
-      actions={['delete', 'edit']}
+      details={
+        <>
+          <p key={name} className="product__name">
+            {name}
+          </p>
+          <p key={quantity} className="product__quantity">
+            {quantity}
+          </p>
+          <p key={price} className="product__price">
+            <span>{currency}</span> {price}
+          </p>
+        </>
+      }
+      actions={
+        <>
+          <i key="delete" className="material-icons">
+            delete
+          </i>
+          <Link key="edit" to="/">
+            <i className="material-icons">edit</i>
+          </Link>
+        </>
+      }
     />
   )
 }
