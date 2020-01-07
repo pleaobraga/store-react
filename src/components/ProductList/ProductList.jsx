@@ -9,7 +9,6 @@ export const ProductList = ({ listItems }) => {
   return (
     <List
       className="product-list"
-      title="Products"
       header={
         <>
           <p key="Name" className="header__name">
@@ -17,6 +16,9 @@ export const ProductList = ({ listItems }) => {
           </p>
           <p key="Name" className="header__quantity">
             Quantity
+          </p>
+          <p key="Name" className="header__quantity abbr">
+            Qty
           </p>
           <p key="Name" className="header__price">
             Price

@@ -6,7 +6,7 @@ import './List.scss'
 export const List = ({ header, title, listItems, className }) => {
   return (
     <div className={`list ${className ? className : ''}`}>
-      <h1 className="list__title">{title}</h1>
+      {title && <h1 className="list__title">{title}</h1>}
       <div className="list__header">{header}</div>
       {listItems}
     </div>
@@ -15,8 +15,7 @@ export const List = ({ header, title, listItems, className }) => {
 
 List.defaultProps = {
   className: '',
-  details: {},
-  actions: {}
+  listItems: {}
 }
 
 List.propTypes = {

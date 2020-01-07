@@ -16,6 +16,11 @@ exports[`ProductList render proprely 1`] = `
         Quantity
       </p>
       <p
+        className="header__quantity abbr"
+      >
+        Qty
+      </p>
+      <p
         className="header__price"
       >
         Price
@@ -23,6 +28,5 @@ exports[`ProductList render proprely 1`] = `
     </React.Fragment>
   }
   listItems={<React.Fragment />}
-  title="Products"
 />
 `;

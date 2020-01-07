@@ -4,11 +4,9 @@ exports[`List render proprely 1`] = `
 <div
   className="list "
 >
-  <h1
-    className="list__title"
-  />
   <div
     className="list__header"
   />
+  <Component />
 </div>
 `;
