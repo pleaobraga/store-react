@@ -21,40 +21,68 @@ exports[`Content Page should render content correctly 1`] = `
         text="text"
         title="title"
       >
-        <div
+        <ListItem
+          actions={
+            Array [
+              "delete",
+              "edit",
+            ]
+          }
           className="product"
+          details={
+            Array [
+              <p
+                className="product__name"
+              />,
+              <p
+                className="product__quantity"
+              />,
+              <p
+                className="product__price"
+              >
+                <span />
+                 
+              </p>,
+            ]
+          }
         >
           <div
-            className="product-details"
+            className="list-item product"
           >
-            <p
-              className="product__name"
-            />
-            <p
-              className="product__quantity"
-            />
-            <p
-              className="product__price"
+            <div
+              className="list-item__details"
             >
-              <span />
-               
-            </p>
+              <p
+                className="product__name"
+              />
+              <p
+                className="product__quantity"
+              />
+              <p
+                className="product__price"
+              >
+                <span />
+                 
+              </p>
+            </div>
+            <div
+              className="list-item__actions"
+            >
+              <i
+                className="material-icons"
+                key="delete"
+              >
+                delete
+              </i>
+              <i
+                className="material-icons"
+                key="edit"
+              >
+                edit
+              </i>
+            </div>
           </div>
-          <div
-            className="product-actions"
-          >
-            <i
-              className="material-icons "
-            >
-              delete
-            </i>
-            <i
-              className="material-icons "
-            >
-              edit
-            </i>
-          </div>
-        </div>
+        </ListItem>
       </Memo(Product)>
     </div>
   </ContentPage>

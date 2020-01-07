@@ -1,38 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Product render proprely 1`] = `
-<div
+<Memo(ListItem)
+  actions={
+    Array [
+      "delete",
+      "edit",
+    ]
+  }
   className="product"
->
-  <div
-    className="product-details"
-  >
-    <p
-      className="product__name"
-    />
-    <p
-      className="product__quantity"
-    />
-    <p
-      className="product__price"
-    >
-      <span />
-       
-    </p>
-  </div>
-  <div
-    className="product-actions"
-  >
-    <i
-      className="material-icons "
-    >
-      delete
-    </i>
-    <i
-      className="material-icons "
-    >
-      edit
-    </i>
-  </div>
-</div>
+  details={
+    Array [
+      <p
+        className="product__name"
+      />,
+      <p
+        className="product__quantity"
+      />,
+      <p
+        className="product__price"
+      >
+        <span />
+         
+      </p>,
+    ]
+  }
+/>
 `;
