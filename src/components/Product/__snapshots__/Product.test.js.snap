@@ -10,7 +10,7 @@ exports[`Product render proprely 1`] = `
         delete
       </i>
       <ForwardRef
-        to="/"
+        to="/undefined"
       >
         <i
           className="material-icons"

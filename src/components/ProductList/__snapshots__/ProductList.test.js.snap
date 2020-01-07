@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductList render proprely 1`] = `
+<Memo(List)
+  className="product-list"
+  header={
+    <React.Fragment>
+      <p
+        className="header__name"
+      >
+        Name
+      </p>
+      <p
+        className="header__quantity"
+      >
+        Quantity
+      </p>
+      <p
+        className="header__price"
+      >
+        Price
+      </p>
+    </React.Fragment>
+  }
+  listItems={<React.Fragment />}
+  title="Products"
+/>
+`;

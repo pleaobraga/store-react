@@ -4,7 +4,7 @@ import ListItem from '../ListItem'
 import { Link } from 'react-router-dom'
 import './Product.scss'
 
-export const Product = ({ name, quantity, price, currency }) => {
+export const Product = ({ id, name, quantity, price, currency }) => {
   return (
     <ListItem
       className="product"
@@ -26,7 +26,7 @@ export const Product = ({ name, quantity, price, currency }) => {
           <i key="delete" className="material-icons">
             delete
           </i>
-          <Link key="edit" to="/">
+          <Link key="edit" to={`/${id}`}>
             <i className="material-icons">edit</i>
           </Link>
         </>
@@ -36,6 +36,7 @@ export const Product = ({ name, quantity, price, currency }) => {
 }
 
 Product.propTypes = {
+  id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   quantity: PropTypes.number.isRequired,
   price: PropTypes.string.isRequired,

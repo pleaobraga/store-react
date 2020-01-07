@@ -1,0 +1,21 @@
+@import '../../styles/colors';
+
+.product-list {
+  .list__header {
+    .header {
+      &__name {
+        width: 60%;
+      }
+
+      &__quantity {
+        text-align: end;
+        width: 15%;
+      }
+
+      &__price {
+        text-align: end;
+        width: 35%;
+      }
+    }
+  }
+}

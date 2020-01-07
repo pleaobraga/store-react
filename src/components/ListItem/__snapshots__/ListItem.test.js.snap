@@ -9,10 +9,5 @@ exports[`ListItem render proprely 1`] = `
   >
     <Component />
   </div>
-  <div
-    className="list-item__actions"
-  >
-    <Component />
-  </div>
 </div>
 `;

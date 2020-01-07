@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List render proprely 1`] = `
+<div
+  className="list "
+>
+  <h1
+    className="list__title"
+  />
+  <div
+    className="list__header"
+  />
+</div>
+`;
