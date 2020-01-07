@@ -6,6 +6,13 @@ exports[`ListItem render proprely 1`] = `
 >
   <div
     className="list-item__details"
-  />
+  >
+    <Component />
+  </div>
+  <div
+    className="list-item__actions"
+  >
+    <Component />
+  </div>
 </div>
 `;

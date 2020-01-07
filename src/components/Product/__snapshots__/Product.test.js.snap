@@ -3,27 +3,46 @@
 exports[`Product render proprely 1`] = `
 <Memo(ListItem)
   actions={
-    Array [
-      "delete",
-      "edit",
-    ]
+    <React.Fragment>
+      <i
+        className="material-icons"
+      >
+        delete
+      </i>
+      <ForwardRef
+        to="/"
+      >
+        <i
+          className="material-icons"
+        >
+          edit
+        </i>
+      </ForwardRef>
+    </React.Fragment>
   }
   className="product"
   details={
-    Array [
+    <React.Fragment>
       <p
         className="product__name"
-      />,
+      >
+        Name
+      </p>
       <p
         className="product__quantity"
-      />,
+      >
+        2
+      </p>
       <p
         className="product__price"
       >
-        <span />
+        <span>
+          R$
+        </span>
          
-      </p>,
-    ]
+        20,10
+      </p>
+    </React.Fragment>
   }
 />
 `;
