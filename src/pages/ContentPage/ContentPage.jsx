@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import Card from '../../components/Card'
+import Product from '../../components/Product'
 import Loading from '../../components/Loading'
 import { getContent as actionGetContent } from '../../reducers/ContentReducer'
 import ErrorPage from '../ErrorPage'
@@ -22,7 +22,7 @@ const ContentPage = () => {
     <ErrorPage />
   ) : pageContent.content ? (
     <div className="page page-content">
-      <Card
+      <Product
         title={pageContent.content.title}
         text={pageContent.content.text}
       />

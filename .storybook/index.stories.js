@@ -1,5 +1,5 @@
 // Components
-import Card from '../src/components/Card/Card.stories.js'
+import Product from '../src/components/Product/Product.stories.js'
 import Loading from '../src/components/Loading/Loading.stories.js'
 import DynamicImport from '../src/components/DynamicImport/DynamicImport.stories.js'
 
