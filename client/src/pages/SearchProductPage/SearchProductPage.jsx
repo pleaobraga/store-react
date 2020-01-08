@@ -4,11 +4,13 @@ import ErrorPage from '../ErrorPage'
 import Filter from '../../components/Filter'
 import CrudButtons from '../../components/CrudButtons'
 import ProductList from '../../components/ProductList'
+import { useHistory } from 'react-router-dom'
 import './SearchProductPage.scss'
 
 const SearchProductPage = () => {
   const [search, setSearch] = React.useState('')
   const [filteredItems, setfilteredItems] = React.useState([])
+  const history = useHistory()
 
   const listItems = [
     {
@@ -70,7 +72,11 @@ const SearchProductPage = () => {
           placeholder="search for product by name"
         />
         <CrudButtons
-          create={{ onClick: () => {} }}
+          create={{
+            onClick: () => {
+              history.push('/new')
+            }
+          }}
           edit={{ onClick: () => {} }}
           del={{ onClick: () => {} }}
         />

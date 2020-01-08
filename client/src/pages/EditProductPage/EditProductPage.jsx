@@ -6,6 +6,8 @@ import './EditProductPage.scss'
 const WelcomePage = () => {
   const { id } = useParams()
 
+  debugger
+
   return (
     <div className="page page-edit-product">
       <h1 className="page-edit-product__title">{`${

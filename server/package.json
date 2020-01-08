@@ -1,0 +1,37 @@
+{
+  "name": "store-server",
+  "version": "1.0.0",
+  "description": "React Node store server ",
+  "main": "server.js",
+  "engines": {
+    "node": "12.13.1",
+    "yarn": "1.21.1"
+  },
+  "scripts": {
+    "start": "nodemon --exec babel-node -- server.js",
+    "build": "babel src -d dist"
+  },
+  "author": "pleaobraga",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@babel/node": "^7.7.4",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.7.2",
+    "hapi-swagger": "^11.0.2"
+  },
+  "dependencies": {
+    "@babel/preset-env": "^7.7.4",
+    "@hapi/boom": "^8.0.1",
+    "@hapi/glue": "^6.2.0",
+    "@hapi/hapi": "^18.4.0",
+    "@hapi/inert": "^5.2.2",
+    "@hapi/joi": "^16.1.8",
+    "@hapi/vision": "^5.5.4",
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.1",
+    "pg": "^7.14.0",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.21.2"
+  }
+}
