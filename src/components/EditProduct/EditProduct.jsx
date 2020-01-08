@@ -1,67 +1,106 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { formatReal } from '../../utils/utils'
 import './EditProduct.scss'
 
-export const Product = ({
-  currentName,
-  currentQuantity,
-  currentPrice,
-  currentCurrency
-}) => {
-  const [name, setName] = React.useState(currentName || '')
-  const [quantity, setQuantity] = React.useState(currentQuantity || 0)
-  const [currency, setCurrency] = React.useState(currentCurrency || 'R$')
-  const [price, setPrice] = React.useState(currentPrice || '0,00')
+export const EditProduct = ({ name, quantity, price, currency }) => {
+  const [product, setProduct] = React.useState({})
+
+  React.useEffect(() => {
+    setProduct({ name, quantity, price, currency })
+  }, [])
+
+  const onChange = event => {
+    if (event.target.name === 'price') {
+      const price = formatReal(event.target.value)
+
+      setProduct({ ...product, price })
+    } else {
+      setProduct({ ...product, [event.target.name]: event.target.value })
+    }
+  }
+
+  const save = event => {
+    event.preventDefault()
+  }
+
+  const cancel = event => {
+    event.preventDefault()
+  }
 
   return (
-    <div
-      className="edit-product"
-      details={
-        <>
-          <p key={name} className="product__name">
-            {name}
-          </p>
-          <p key={quantity} className="product__quantity">
-            {quantity}
-          </p>
-          <p key={price} className="product__price">
-            <span>{currency}</span> {price}
-          </p>
-        </>
-      }
-    >
-      <input
-        name="name"
-        value={name}
-        onChange={() => setName(event.target.value)}
-      />
+    <form className="edit-product">
+      <div className="edit-product__values">
+        <div className="input-group">
+          <label>Name</label>
+          <input
+            className="name"
+            name="name"
+            value={product.name}
+            onChange={onChange}
+            placeholder="name"
+            required
+          />
+        </div>
+        <div className="input-group">
+          <label>Quantity</label>
+          <input
+            className="quantity"
+            name="quantity"
+            value={product.quantity}
+            onChange={onChange}
+            type="number"
+            placeholder="qty"
+            required
+          />
+        </div>
+        <div className="input-group">
+          <label>Currency</label>
+          <input
+            className="currency"
+            name="currency"
+            value={product.currency}
+            onChange={onChange}
+            placeholder="$"
+            required
+          />
+        </div>
 
-      <input
-        name="quantity"
-        value={quantity}
-        onChange={() => setQuantity(event.target.value)}
-      />
-
-      <input
-        name="currency"
-        value={currency}
-        onChange={() => setCurrency(event.target.value)}
-      />
-
-      <input
-        name="price"
-        value={price}
-        onChange={() => setPrice(event.target.value)}
-      />
-    </div>
+        <div className="input-group">
+          <label>Price</label>
+          <input
+            className="price"
+            name="price"
+            value={product.price}
+            onChange={onChange}
+            required
+          />
+        </div>
+      </div>
+      <div className="edit-product__actions">
+        <button className="save" onClick={save}>
+          Save
+        </button>
+        <button className="cancel" onClick={cancel}>
+          Cancel
+        </button>
+      </div>
+    </form>
   )
 }
 
-Product.propTypes = {
-  currentName: PropTypes.string,
-  currentQuantity: PropTypes.number,
-  currentPrice: PropTypes.string,
-  currentCurrency: PropTypes.string
+EditProduct.defaultProps = {
+  name: '',
+  quantity: 1,
+  price: '0,00',
+  currency: 'R$'
 }
 
-export default React.memo(Product)
+EditProduct.propTypes = {
+  name: PropTypes.string,
+  quantity: PropTypes.number,
+  price: PropTypes.string,
+  currency: PropTypes.string
+}
+
+export default React.memo(EditProduct)

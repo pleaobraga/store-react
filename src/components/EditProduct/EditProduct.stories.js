@@ -2,13 +2,13 @@ import React from 'react'
 import { storiesOf } from '@storybook/react'
 import { text, number } from '@storybook/addon-knobs'
 import { BrowserRouter as Router } from 'react-router-dom'
-import { Product } from './EditProduct'
+import { EditProduct } from './EditProduct'
 
-export default storiesOf('Components | Product', module).add(
+export default storiesOf('Components | EditProduct', module).add(
   'default',
   () => (
     <Router>
-      <Product
+      <EditProduct
         name={text('Name', 'Name')}
         quantity={number('Quantity', 2)}
         price={text('Price', '20,10')}
@@ -20,7 +20,7 @@ export default storiesOf('Components | Product', module).add(
     info: {
       inline: true,
       header: false,
-      propTables: [Product]
+      propTables: [EditProduct]
     }
   }
 )

@@ -1,6 +1,7 @@
 // Components
 import Product from '../src/components/Product/Product.stories.js'
 import ProductList from '../src/components/ProductList/ProductList.stories.js'
+import EditProduct from '../src/components/EditProduct/EditProduct.stories.js'
 import CrudButtons from '../src/components/CrudButtons/CrudButtons.stories'
 import Filter from '../src/components/Filter/Filter.stories.js'
 import Loading from '../src/components/Loading/Loading.stories.js'

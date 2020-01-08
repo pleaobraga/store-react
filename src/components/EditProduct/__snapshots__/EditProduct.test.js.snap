@@ -1,51 +1,84 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Product render proprely 1`] = `
-<div
+<form
   className="edit-product"
-  details={
-    <React.Fragment>
-      <p
-        className="product__name"
-      >
-        
-      </p>
-      <p
-        className="product__quantity"
-      >
-        0
-      </p>
-      <p
-        className="product__price"
-      >
-        <span>
-          R$
-        </span>
-         
-        0,00
-      </p>
-    </React.Fragment>
-  }
 >
-  <input
-    name="name"
-    onChange={[Function]}
-    value=""
-  />
-  <input
-    name="quantity"
-    onChange={[Function]}
-    value={0}
-  />
-  <input
-    name="currency"
-    onChange={[Function]}
-    value="R$"
-  />
-  <input
-    name="price"
-    onChange={[Function]}
-    value="0,00"
-  />
-</div>
+  <div
+    className="edit-product__values"
+  >
+    <div
+      className="input-group"
+    >
+      <label>
+        Name
+      </label>
+      <input
+        className="name"
+        name="name"
+        onChange={[Function]}
+        placeholder="name"
+        required={true}
+      />
+    </div>
+    <div
+      className="input-group"
+    >
+      <label>
+        Quantity
+      </label>
+      <input
+        className="quantity"
+        name="quantity"
+        onChange={[Function]}
+        placeholder="qty"
+        required={true}
+        type="number"
+      />
+    </div>
+    <div
+      className="input-group"
+    >
+      <label>
+        Currency
+      </label>
+      <input
+        className="currency"
+        name="currency"
+        onChange={[Function]}
+        placeholder="$"
+        required={true}
+      />
+    </div>
+    <div
+      className="input-group"
+    >
+      <label>
+        Price
+      </label>
+      <input
+        className="price"
+        name="price"
+        onChange={[Function]}
+        required={true}
+      />
+    </div>
+  </div>
+  <div
+    className="edit-product__actions"
+  >
+    <button
+      className="save"
+      onClick={[Function]}
+    >
+      Save
+    </button>
+    <button
+      className="cancel"
+      onClick={[Function]}
+    >
+      Cancel
+    </button>
+  </div>
+</form>
 `;
