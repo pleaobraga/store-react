@@ -1,0 +1,16 @@
+.page {
+  &-search-product {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    .title {
+      font-size: 8rem;
+    }
+
+    &__actions {
+      margin-top: 7rem;
+      width: 40rem;
+    }
+  }
+}
