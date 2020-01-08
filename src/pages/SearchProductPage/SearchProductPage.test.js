@@ -2,39 +2,20 @@ jest.mock('../../utils/utils')
 import 'babel-polyfill'
 import React from 'react'
 import { mount } from 'enzyme'
-import ContentPage from './ContentPage'
-import { Provider } from 'react-redux'
-import {
-  mockStore,
-  initialStateRootReducer
-} from '../../reducers/__mocks__/reduxMock'
+import SearchProductPage from './SearchProductPage'
 
-const setup = state => {
-  const newState = {
-    content: {
-      ...initialStateRootReducer.content,
-      ...state
-    }
-  }
-
-
-  const store = mockStore(newState)
-
-  const contentPage = mount(
-    <Provider store={store}>
-      <ContentPage />
-    </Provider>
-  )
+const setup = () => {
+  const contentPage = mount(<SearchProductPage />)
 
   return contentPage
 }
 
 describe('Content Page', () => {
-  it('should render loading correctly', () => {
-    const contentPage = setup()
+  // it('should render loading correctly', () => {
+  //   const contentPage = setup()
 
-    expect(contentPage).toMatchSnapshot()
-  })
+  //   expect(contentPage).toMatchSnapshot()
+  // })
 
   it('should render content correctly', () => {
     const newState = {
@@ -46,13 +27,13 @@ describe('Content Page', () => {
     expect(contentPage).toMatchSnapshot()
   })
 
-  it('should render error correctly', () => {
-    const newState = {
-      errorContent: true
-    }
+  // it('should render error correctly', () => {
+  //   const newState = {
+  //     errorContent: true
+  //   }
 
-    const contentPage = setup(newState)
+  //   const contentPage = setup(newState)
 
-    expect(contentPage).toMatchSnapshot()
-  })
+  //   expect(contentPage).toMatchSnapshot()
+  // })
 })

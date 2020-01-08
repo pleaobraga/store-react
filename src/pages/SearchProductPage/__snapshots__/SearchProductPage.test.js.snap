@@ -1,0 +1,554 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Content Page should render content correctly 1`] = `
+<SearchProductPage>
+  <div
+    className="page page-search-product"
+  >
+    <h1
+      className="title"
+    >
+      Products
+    </h1>
+    <div
+      className="page-search-product__actions"
+    >
+      <Memo(Filter)
+        value=""
+      >
+        <div
+          className="filter"
+        >
+          <i
+            className="material-icons filter__icon"
+            key="search"
+          >
+            search
+          </i>
+          <input
+            className="filter__input"
+            value=""
+          />
+        </div>
+      </Memo(Filter)>
+      <Memo(CrudButtons)
+        create={
+          Object {
+            "onClick": [Function],
+          }
+        }
+        del={
+          Object {
+            "onClick": [Function],
+          }
+        }
+        edit={
+          Object {
+            "onClick": [Function],
+          }
+        }
+      >
+        <div
+          className="crud-buttons"
+        >
+          <button
+            className="create  "
+            key="create"
+            onClick={[Function]}
+          >
+            <i
+              className="material-icons create__icon"
+            >
+              add_circle
+            </i>
+            <span>
+              Add
+            </span>
+          </button>
+          <button
+            className="edit  "
+            key="edit"
+          >
+            <i
+              className="material-icons edit__icon"
+            >
+              create
+            </i>
+            <span>
+              Edit
+            </span>
+          </button>
+          <button
+            className="delete  "
+            key="delete"
+          >
+            <i
+              className="material-icons delete__icon"
+            >
+              delete
+            </i>
+            <span>
+              Delete
+            </span>
+          </button>
+        </div>
+      </Memo(CrudButtons)>
+    </div>
+    <ProductList
+      listItems={
+        Array [
+          Object {
+            "currency": "R$",
+            "id": "0",
+            "name": "Product 1",
+            "price": "10,00",
+            "quantity": "1",
+          },
+          Object {
+            "currency": "R$",
+            "id": "1",
+            "name": "Product 2",
+            "price": "20,00",
+            "quantity": "2",
+          },
+          Object {
+            "currency": "R$",
+            "id": "2",
+            "name": "Product 3",
+            "price": "30,00",
+            "quantity": "3",
+          },
+          Object {
+            "currency": "R$",
+            "id": "3",
+            "name": "Product 4",
+            "price": "40,00",
+            "quantity": "4",
+          },
+        ]
+      }
+    >
+      <List
+        className="product-list"
+        header={
+          <React.Fragment>
+            <p
+              className="header__name"
+            >
+              Name
+            </p>
+            <p
+              className="header__quantity"
+            >
+              Quantity
+            </p>
+            <p
+              className="header__quantity abbr"
+            >
+              Qty
+            </p>
+            <p
+              className="header__price"
+            >
+              Price
+            </p>
+          </React.Fragment>
+        }
+        listItems={
+          <React.Fragment>
+            <UNDEFINED
+              currency="R$"
+              name="Product 1"
+              price="10,00"
+              quantity="1"
+            />
+            <UNDEFINED
+              currency="R$"
+              name="Product 2"
+              price="20,00"
+              quantity="2"
+            />
+            <UNDEFINED
+              currency="R$"
+              name="Product 3"
+              price="30,00"
+              quantity="3"
+            />
+            <UNDEFINED
+              currency="R$"
+              name="Product 4"
+              price="40,00"
+              quantity="4"
+            />
+          </React.Fragment>
+        }
+      >
+        <div
+          className="list product-list"
+        >
+          <div
+            className="list__header"
+          >
+            <p
+              className="header__name"
+              key="Name"
+            >
+              Name
+            </p>
+            <p
+              className="header__quantity"
+              key="Name"
+            >
+              Quantity
+            </p>
+            <p
+              className="header__quantity abbr"
+              key="Name"
+            >
+              Qty
+            </p>
+            <p
+              className="header__price"
+              key="Name"
+            >
+              Price
+            </p>
+          </div>
+          <Memo(Product)
+            currency="R$"
+            key="0"
+            name="Product 1"
+            price="10,00"
+            quantity="1"
+          >
+            <ListItem
+              actions={
+                <React.Fragment>
+                  <i
+                    className="material-icons"
+                  >
+                    delete
+                  </i>
+                  <ForwardRef
+                    to="/undefined"
+                  >
+                    <i
+                      className="material-icons"
+                    >
+                      edit
+                    </i>
+                  </ForwardRef>
+                </React.Fragment>
+              }
+              className="product"
+              details={
+                <React.Fragment>
+                  <p
+                    className="product__name"
+                  >
+                    Product 1
+                  </p>
+                  <p
+                    className="product__quantity"
+                  >
+                    1
+                  </p>
+                  <p
+                    className="product__price"
+                  >
+                    <span>
+                      R$
+                    </span>
+                     
+                    10,00
+                  </p>
+                </React.Fragment>
+              }
+            >
+              <div
+                className="list-item product"
+              >
+                <div
+                  className="list-item__details"
+                >
+                  <p
+                    className="product__name"
+                    key="Product 1"
+                  >
+                    Product 1
+                  </p>
+                  <p
+                    className="product__quantity"
+                    key="1"
+                  >
+                    1
+                  </p>
+                  <p
+                    className="product__price"
+                    key="10,00"
+                  >
+                    <span>
+                      R$
+                    </span>
+                     
+                    10,00
+                  </p>
+                </div>
+              </div>
+            </ListItem>
+          </Memo(Product)>
+          <Memo(Product)
+            currency="R$"
+            key="1"
+            name="Product 2"
+            price="20,00"
+            quantity="2"
+          >
+            <ListItem
+              actions={
+                <React.Fragment>
+                  <i
+                    className="material-icons"
+                  >
+                    delete
+                  </i>
+                  <ForwardRef
+                    to="/undefined"
+                  >
+                    <i
+                      className="material-icons"
+                    >
+                      edit
+                    </i>
+                  </ForwardRef>
+                </React.Fragment>
+              }
+              className="product"
+              details={
+                <React.Fragment>
+                  <p
+                    className="product__name"
+                  >
+                    Product 2
+                  </p>
+                  <p
+                    className="product__quantity"
+                  >
+                    2
+                  </p>
+                  <p
+                    className="product__price"
+                  >
+                    <span>
+                      R$
+                    </span>
+                     
+                    20,00
+                  </p>
+                </React.Fragment>
+              }
+            >
+              <div
+                className="list-item product"
+              >
+                <div
+                  className="list-item__details"
+                >
+                  <p
+                    className="product__name"
+                    key="Product 2"
+                  >
+                    Product 2
+                  </p>
+                  <p
+                    className="product__quantity"
+                    key="2"
+                  >
+                    2
+                  </p>
+                  <p
+                    className="product__price"
+                    key="20,00"
+                  >
+                    <span>
+                      R$
+                    </span>
+                     
+                    20,00
+                  </p>
+                </div>
+              </div>
+            </ListItem>
+          </Memo(Product)>
+          <Memo(Product)
+            currency="R$"
+            key="2"
+            name="Product 3"
+            price="30,00"
+            quantity="3"
+          >
+            <ListItem
+              actions={
+                <React.Fragment>
+                  <i
+                    className="material-icons"
+                  >
+                    delete
+                  </i>
+                  <ForwardRef
+                    to="/undefined"
+                  >
+                    <i
+                      className="material-icons"
+                    >
+                      edit
+                    </i>
+                  </ForwardRef>
+                </React.Fragment>
+              }
+              className="product"
+              details={
+                <React.Fragment>
+                  <p
+                    className="product__name"
+                  >
+                    Product 3
+                  </p>
+                  <p
+                    className="product__quantity"
+                  >
+                    3
+                  </p>
+                  <p
+                    className="product__price"
+                  >
+                    <span>
+                      R$
+                    </span>
+                     
+                    30,00
+                  </p>
+                </React.Fragment>
+              }
+            >
+              <div
+                className="list-item product"
+              >
+                <div
+                  className="list-item__details"
+                >
+                  <p
+                    className="product__name"
+                    key="Product 3"
+                  >
+                    Product 3
+                  </p>
+                  <p
+                    className="product__quantity"
+                    key="3"
+                  >
+                    3
+                  </p>
+                  <p
+                    className="product__price"
+                    key="30,00"
+                  >
+                    <span>
+                      R$
+                    </span>
+                     
+                    30,00
+                  </p>
+                </div>
+              </div>
+            </ListItem>
+          </Memo(Product)>
+          <Memo(Product)
+            currency="R$"
+            key="3"
+            name="Product 4"
+            price="40,00"
+            quantity="4"
+          >
+            <ListItem
+              actions={
+                <React.Fragment>
+                  <i
+                    className="material-icons"
+                  >
+                    delete
+                  </i>
+                  <ForwardRef
+                    to="/undefined"
+                  >
+                    <i
+                      className="material-icons"
+                    >
+                      edit
+                    </i>
+                  </ForwardRef>
+                </React.Fragment>
+              }
+              className="product"
+              details={
+                <React.Fragment>
+                  <p
+                    className="product__name"
+                  >
+                    Product 4
+                  </p>
+                  <p
+                    className="product__quantity"
+                  >
+                    4
+                  </p>
+                  <p
+                    className="product__price"
+                  >
+                    <span>
+                      R$
+                    </span>
+                     
+                    40,00
+                  </p>
+                </React.Fragment>
+              }
+            >
+              <div
+                className="list-item product"
+              >
+                <div
+                  className="list-item__details"
+                >
+                  <p
+                    className="product__name"
+                    key="Product 4"
+                  >
+                    Product 4
+                  </p>
+                  <p
+                    className="product__quantity"
+                    key="4"
+                  >
+                    4
+                  </p>
+                  <p
+                    className="product__price"
+                    key="40,00"
+                  >
+                    <span>
+                      R$
+                    </span>
+                     
+                    40,00
+                  </p>
+                </div>
+              </div>
+            </ListItem>
+          </Memo(Product)>
+        </div>
+      </List>
+    </ProductList>
+  </div>
+</SearchProductPage>
+`;
