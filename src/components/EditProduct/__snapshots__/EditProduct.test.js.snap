@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Product render proprely 1`] = `
+<div
+  className="edit-product"
+  details={
+    <React.Fragment>
+      <p
+        className="product__name"
+      >
+        
+      </p>
+      <p
+        className="product__quantity"
+      >
+        0
+      </p>
+      <p
+        className="product__price"
+      >
+        <span>
+          R$
+        </span>
+         
+        0,00
+      </p>
+    </React.Fragment>
+  }
+>
+  <input
+    name="name"
+    onChange={[Function]}
+    value=""
+  />
+  <input
+    name="quantity"
+    onChange={[Function]}
+    value={0}
+  />
+  <input
+    name="currency"
+    onChange={[Function]}
+    value="R$"
+  />
+  <input
+    name="price"
+    onChange={[Function]}
+    value="0,00"
+  />
+</div>
+`;

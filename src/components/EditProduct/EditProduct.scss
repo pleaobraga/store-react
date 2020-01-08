@@ -1,0 +1,18 @@
+@import '../../styles/colors';
+
+.product {
+  .list-item__details {
+    .product__name {
+      width: 60%;
+    }
+
+    .product__quantity {
+      width: 15%;
+      text-align: right;
+    }
+    .product__price {
+      width: 35%;
+      text-align: right;
+    }
+  }
+}

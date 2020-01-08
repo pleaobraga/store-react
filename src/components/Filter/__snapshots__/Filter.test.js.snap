@@ -13,6 +13,7 @@ exports[`Filter render proprely 1`] = `
   <input
     className="filter__input"
     onChange={[Function]}
+    placeholder="Search"
     value="test"
   />
 </div>

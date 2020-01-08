@@ -14,6 +14,8 @@ exports[`Content Page should render content correctly 1`] = `
       className="page-search-product__actions"
     >
       <Memo(Filter)
+        onChange={[Function]}
+        placeholder="search for product by name"
         value=""
       >
         <div
@@ -27,6 +29,8 @@ exports[`Content Page should render content correctly 1`] = `
           </i>
           <input
             className="filter__input"
+            onChange={[Function]}
+            placeholder="search for product by name"
             value=""
           />
         </div>
@@ -102,28 +106,28 @@ exports[`Content Page should render content correctly 1`] = `
             "id": "0",
             "name": "Product 1",
             "price": "10,00",
-            "quantity": "1",
+            "quantity": 1,
           },
           Object {
             "currency": "R$",
             "id": "1",
             "name": "Product 2",
             "price": "20,00",
-            "quantity": "2",
+            "quantity": 2,
           },
           Object {
             "currency": "R$",
             "id": "2",
             "name": "Product 3",
             "price": "30,00",
-            "quantity": "3",
+            "quantity": 3,
           },
           Object {
             "currency": "R$",
             "id": "3",
             "name": "Product 4",
             "price": "40,00",
-            "quantity": "4",
+            "quantity": 4,
           },
         ]
       }
@@ -160,25 +164,25 @@ exports[`Content Page should render content correctly 1`] = `
               currency="R$"
               name="Product 1"
               price="10,00"
-              quantity="1"
+              quantity={1}
             />
             <UNDEFINED
               currency="R$"
               name="Product 2"
               price="20,00"
-              quantity="2"
+              quantity={2}
             />
             <UNDEFINED
               currency="R$"
               name="Product 3"
               price="30,00"
-              quantity="3"
+              quantity={3}
             />
             <UNDEFINED
               currency="R$"
               name="Product 4"
               price="40,00"
-              quantity="4"
+              quantity={4}
             />
           </React.Fragment>
         }
@@ -219,7 +223,7 @@ exports[`Content Page should render content correctly 1`] = `
             key="0"
             name="Product 1"
             price="10,00"
-            quantity="1"
+            quantity={1}
           >
             <ListItem
               actions={
@@ -302,7 +306,7 @@ exports[`Content Page should render content correctly 1`] = `
             key="1"
             name="Product 2"
             price="20,00"
-            quantity="2"
+            quantity={2}
           >
             <ListItem
               actions={
@@ -385,7 +389,7 @@ exports[`Content Page should render content correctly 1`] = `
             key="2"
             name="Product 3"
             price="30,00"
-            quantity="3"
+            quantity={3}
           >
             <ListItem
               actions={
@@ -468,7 +472,7 @@ exports[`Content Page should render content correctly 1`] = `
             key="3"
             name="Product 4"
             price="40,00"
-            quantity="4"
+            quantity={4}
           >
             <ListItem
               actions={
