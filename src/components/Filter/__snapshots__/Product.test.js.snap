@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Product render proprely 1`] = `
+<Memo(ListItem)
+  actions={
+    <React.Fragment>
+      <i
+        className="material-icons"
+      >
+        delete
+      </i>
+      <ForwardRef
+        to="/undefined"
+      >
+        <i
+          className="material-icons"
+        >
+          edit
+        </i>
+      </ForwardRef>
+    </React.Fragment>
+  }
+  className="product"
+  details={
+    <React.Fragment>
+      <p
+        className="product__name"
+      >
+        Name
+      </p>
+      <p
+        className="product__quantity"
+      >
+        2
+      </p>
+      <p
+        className="product__price"
+      >
+        <span>
+          R$
+        </span>
+         
+        20,10
+      </p>
+    </React.Fragment>
+  }
+/>
+`;

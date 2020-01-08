@@ -16,5 +16,11 @@ export default storiesOf('Components | Product', module).add(
       />
     </Router>
   ),
-  { info: { inline: true, header: false } }
+  {
+    info: {
+      inline: true,
+      header: false,
+      propTables: [Product]
+    }
+  }
 )

@@ -1,0 +1,27 @@
+@import '../../styles/colors';
+
+.filter {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  padding: 2px;
+
+  border: 1px solid $black;
+  border-radius: 10px;
+
+  &__icon {
+    font-size: 2rem;
+    padding-left: 1rem;
+  }
+
+  &__input {
+    width: 100%;
+    padding-left: 1rem;
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

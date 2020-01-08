@@ -1,7 +1,7 @@
 {
   "name": "store-react",
   "version": "1.0.0",
-  "description": "Store made by react",
+  "description": "Store made with react",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --open --config webpack.dev.js",

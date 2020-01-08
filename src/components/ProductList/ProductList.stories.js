@@ -41,5 +41,5 @@ export default storiesOf('Components | ProductList', module).add(
       <ProductList listItems={listItems} />
     </Router>
   ),
-  { info: { inline: true, header: false } }
+  { info: { inline: true, header: false, propTables: [ProductList] } }
 )

@@ -1,6 +1,7 @@
 // Components
 import Product from '../src/components/Product/Product.stories.js'
 import ProductList from '../src/components/ProductList/ProductList.stories.js'
+import Filter from '../src/components/Filter/Filter.stories.js'
 import Loading from '../src/components/Loading/Loading.stories.js'
 import DynamicImport from '../src/components/DynamicImport/DynamicImport.stories.js'
 
