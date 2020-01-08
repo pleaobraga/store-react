@@ -18,6 +18,8 @@
       }
 
       input {
+        font-size: 1.5rem;
+
         border-top: none;
         border-right: none;
         border-left: none;
@@ -49,7 +51,7 @@
     justify-content: flex-end;
 
     button {
-      margin: 1rem;
+      margin: 2.5rem 1rem 1rem 1rem;
       padding: 0.5rem;
 
       cursor: pointer;

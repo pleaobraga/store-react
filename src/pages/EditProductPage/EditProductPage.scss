@@ -1,0 +1,12 @@
+.page {
+  &-edit-product {
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    &__title {
+      font-size: 7rem;
+      margin-bottom: 7rem;
+    }
+  }
+}

@@ -17,7 +17,7 @@ exports[`Product render proprely 1`] = `
         className="name"
         name="name"
         onChange={[Function]}
-        placeholder="name"
+        placeholder="Type the product name"
         required={true}
       />
     </div>

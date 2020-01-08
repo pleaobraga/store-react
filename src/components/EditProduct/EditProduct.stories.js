@@ -1,19 +1,20 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import { text, number } from '@storybook/addon-knobs'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { EditProduct } from './EditProduct'
+
+const currentProduct = {
+  name: 'Name',
+  quantity: 2,
+  price: '20,10',
+  currency: 'R$'
+}
 
 export default storiesOf('Components | EditProduct', module).add(
   'default',
   () => (
     <Router>
-      <EditProduct
-        name={text('Name', 'Name')}
-        quantity={number('Quantity', 2)}
-        price={text('Price', '20,10')}
-        currency={text('Currency', 'R$')}
-      />
+      <EditProduct currentProduct={currentProduct} />
     </Router>
   ),
   {

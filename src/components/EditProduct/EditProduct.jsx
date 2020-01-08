@@ -1,13 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { formatReal } from '../../utils/utils'
+import Product from '../Product'
 import './EditProduct.scss'
 
-export const EditProduct = ({ name, quantity, price, currency }) => {
+export const EditProduct = ({ currentProduct }) => {
   const [product, setProduct] = React.useState({})
 
   React.useEffect(() => {
-    setProduct({ name, quantity, price, currency })
+    setProduct({ ...currentProduct })
   }, [])
 
   const onChange = event => {
@@ -38,7 +39,7 @@ export const EditProduct = ({ name, quantity, price, currency }) => {
             name="name"
             value={product.name}
             onChange={onChange}
-            placeholder="name"
+            placeholder="Type the product name"
             required
           />
         </div>
@@ -90,17 +91,16 @@ export const EditProduct = ({ name, quantity, price, currency }) => {
 }
 
 EditProduct.defaultProps = {
-  name: '',
-  quantity: 1,
-  price: '0,00',
-  currency: 'R$'
+  currentProduct: {
+    name: '',
+    quantity: 1,
+    price: '0,00',
+    currency: 'R$'
+  }
 }
 
 EditProduct.propTypes = {
-  name: PropTypes.string,
-  quantity: PropTypes.number,
-  price: PropTypes.string,
-  currency: PropTypes.string
+  currentProduct: PropTypes.shape(Product.Prototype)
 }
 
 export default React.memo(EditProduct)

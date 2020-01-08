@@ -4,16 +4,6 @@ import DynamicImport from './components/DynamicImport'
 import ErrorPage from './pages/ErrorPage'
 import Loading from './components/Loading'
 
-const ContentPage = () => (
-  <DynamicImport
-    loadComponent={() =>
-      import(/*  webpackChunkName: "contentPage" */ './pages/ContentPage')
-    }
-    ErrorComponent={() => ErrorPage}
-    LoadingComponent={() => <Loading />}
-  />
-)
-
 const SearchProductPage = () => (
   <DynamicImport
     loadComponent={() =>
@@ -26,12 +16,24 @@ const SearchProductPage = () => (
   />
 )
 
+const EditProductPage = () => (
+  <DynamicImport
+    loadComponent={() =>
+      import(
+        /*  webpackChunkName: "editProductPage" */ './pages/EditProductPage'
+      )
+    }
+    ErrorComponent={() => ErrorPage}
+    LoadingComponent={() => <Loading />}
+  />
+)
+
 const Routes = () => {
   return (
     <BrowserRouter>
       <React.Suspense fallback={<ErrorPage />}>
         <Switch>
-          <Route path="/content" component={ContentPage} />
+          <Route path="/:id" component={EditProductPage} />
           <Route exact path="/" component={SearchProductPage} />
           <Route component={ErrorPage} />
         </Switch>
