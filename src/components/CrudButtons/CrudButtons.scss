@@ -1,0 +1,47 @@
+@import '../../styles/colors';
+
+.crud-buttons {
+  display: flex;
+
+  button {
+    display: flex;
+    align-items: center;
+
+    min-width: 8rem;
+    padding: 0.5rem;
+
+    margin-right: 2rem;
+
+    border: 1px solid black;
+    border-radius: 2px;
+
+    cursor: pointer;
+
+    color: white;
+    font-weight: 700;
+
+    span {
+      width: 100%;
+      text-align: center;
+    }
+
+    &.create {
+      background-color: #00796b;
+      border: 1px solid #00796b;
+    }
+
+    &.edit {
+      background-color: #0288d1;
+      border: 1px solid #0288d1;
+    }
+
+    &.delete {
+      background-color: #e64a19;
+      border: 1px solid #e64a19;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

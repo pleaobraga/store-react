@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CrudButtons render proprely 1`] = `
+<div
+  className="crud-buttons"
+>
+  <button
+    className="create  "
+    key="create"
+    onClick={[Function]}
+  >
+    <i
+      className="material-icons create__icon"
+    >
+      add_circle
+    </i>
+    <span>
+      Add
+    </span>
+  </button>
+  <button
+    className="edit  "
+    key="edit"
+  >
+    <i
+      className="material-icons edit__icon"
+    >
+      create
+    </i>
+    <span>
+      Edit
+    </span>
+  </button>
+  <button
+    className="delete  "
+    key="delete"
+  >
+    <i
+      className="material-icons delete__icon"
+    >
+      delete
+    </i>
+    <span>
+      Delete
+    </span>
+  </button>
+</div>
+`;
