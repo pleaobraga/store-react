@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Filter render proprely 1`] = `
+<div
+  className="filter"
+>
+  <i
+    className="material-icons filter__icon"
+    key="search"
+  >
+    search
+  </i>
+  <input
+    className="filter__input"
+    onChange={[Function]}
+    value="test"
+  />
+</div>
+`;
