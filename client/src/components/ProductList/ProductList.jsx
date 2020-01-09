@@ -9,6 +9,7 @@ export const ProductList = ({ listItems, onChange }) => {
   return (
     <List
       className="product-list"
+      title="Products"
       header={
         <>
           <p key="Name" className="header__name">

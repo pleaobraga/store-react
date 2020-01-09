@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { getAllProducts } from '../../reducers/ProductReducer'
-import { useHistory } from 'react-router-dom'
+import { getAllProducts, deleteProduct } from '../../reducers/ProductReducer'
+import { useHistory, useParams } from 'react-router-dom'
 
 import Loading from '../../components/Loading'
 import ErrorPage from '../ErrorPage'
@@ -14,13 +14,15 @@ import './SearchProductPage.scss'
 const SearchProductPage = () => {
   const dispatch = useDispatch()
   const pageContent = useSelector(state => state.product)
+  const { storeName } = useParams()
+
   const [search, setSearch] = React.useState('')
   const [filteredItems, setFilteredItems] = React.useState([])
   const [productSelectedId, setProductSelectedId] = React.useState(null)
   const history = useHistory()
 
   React.useEffect(() => {
-    dispatch(getAllProducts(0))
+    dispatch(getAllProducts(storeName))
   }, [])
 
   React.useEffect(() => {
@@ -63,11 +65,9 @@ const SearchProductPage = () => {
   }
 
   const contentPage = () => {
-    const { productsList } = pageContent
-
     return (
       <div className="page page-search-product">
-        <h1 className="title">Products</h1>
+        <h1 className="title">Store {storeName}</h1>
 
         <div className="page-search-product__actions">
           <Filter
@@ -78,17 +78,19 @@ const SearchProductPage = () => {
           <CrudButtons
             create={{
               onClick: () => {
-                history.push(`/${productsList.id}/new`)
+                history.push(`/${storeName}/new`)
               }
             }}
             edit={{
               onClick: () => {
-                history.push(`/${productsList.id}/${productSelectedId}`)
+                history.push(`/${storeName}/${productSelectedId}`)
               },
               disabled: productSelectedId ? false : true
             }}
             del={{
-              onClick: () => {},
+              onClick: () => {
+                dispatch(deleteProduct(productSelectedId))
+              },
               disabled: productSelectedId ? false : true
             }}
           />

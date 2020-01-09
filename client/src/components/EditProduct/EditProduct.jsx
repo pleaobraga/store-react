@@ -9,7 +9,7 @@ import Product from '../Product'
 
 import './EditProduct.scss'
 
-export const EditProduct = ({ currentProduct, isEditing }) => {
+export const EditProduct = ({ currentProduct, isEditing, storeName }) => {
   const dispatch = useDispatch()
 
   const [product, setProduct] = React.useState({})
@@ -35,14 +35,14 @@ export const EditProduct = ({ currentProduct, isEditing }) => {
     if (isEditing) {
       dispatch(putProduct(product))
     } else {
-      dispatch(postProduct(product))
+      dispatch(postProduct({ product, storeName }))
     }
   }
 
   const cancel = event => {
     event.preventDefault()
 
-    history.push('/')
+    history.push(`/${storeName}`)
   }
 
   return (
@@ -117,7 +117,8 @@ EditProduct.defaultProps = {
 
 EditProduct.propTypes = {
   currentProduct: PropTypes.shape(Product.Prototype),
-  isEditing: PropTypes.bool.isRequired
+  isEditing: PropTypes.bool.isRequired,
+  storeName: PropTypes.string
 }
 
 export default EditProduct

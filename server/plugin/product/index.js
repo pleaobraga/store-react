@@ -76,7 +76,7 @@ exports.register = (server, options) => {
           quantity: Joi.number(),
           price: Joi.string(),
           currency: Joi.string(),
-          ProductListId: Joi.string()
+          storeName: Joi.string()
         }).label('ProductPostPaylad'),
         failAction: (request, h, error) => {
           throw error

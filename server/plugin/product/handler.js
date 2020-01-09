@@ -1,7 +1,7 @@
 import Boom from '@hapi/boom'
 import Joi from '@hapi/joi'
 
-import { Product } from '../../models'
+import { Product, ProductList } from '../../models'
 
 export const handlerGet = async (request, h) => {
   let product
@@ -63,12 +63,29 @@ export const handlerPost = async (request, h) => {
   console.log(payload)
 
   try {
+    const productList = await ProductList.findOne({
+      where: {
+        name: payload.storeName
+      }
+    })
+
+    const product = await Product.findOne({
+      where: {
+        name: payload.name,
+        ProductListId: productList.id
+      }
+    })
+
+    if (product) {
+      throw Boom.conflict()
+    }
+
     let newProduct = await Product.create({
       name: payload.name,
       quantity: payload.quantity,
       price: payload.price,
       currency: payload.currency,
-      ProductListId: payload.ProductListId
+      ProductListId: productList.id
     })
 
     newProduct = await Product.findOne({

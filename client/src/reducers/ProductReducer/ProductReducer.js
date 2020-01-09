@@ -38,6 +38,19 @@ const content = (state = initialState, action) => {
         errorContent: false
       }
 
+    case constant.DELETE_PRODUCT_SUCCESS: {
+      const newProductList = state.productsList.Products.filter(
+        item => item.id !== action.product.id
+      )
+
+      return {
+        ...state,
+        productsList: { ...state.productsList, Products: newProductList },
+        loadingContent: false,
+        errorContent: false
+      }
+    }
+
     case constant.GET_PRODUCT_ERROR:
     case constant.PUT_PRODUCT_ERROR:
     case constant.POST_PRODUCT_ERROR:

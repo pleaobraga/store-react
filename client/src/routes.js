@@ -33,8 +33,8 @@ const Routes = () => {
     <BrowserRouter>
       <React.Suspense fallback={<ErrorPage />}>
         <Switch>
-          <Route path="/:dbId/:id" component={EditProductPage} />
-          <Route exact path="/" component={SearchProductPage} />
+          <Route path="/:storeName/:id" component={EditProductPage} />
+          <Route exact path="/:storeName/" component={SearchProductPage} />
           <Route component={ErrorPage} />
         </Switch>
       </React.Suspense>

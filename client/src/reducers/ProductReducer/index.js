@@ -4,5 +4,6 @@ export {
   getAllProducts,
   getProduct,
   putProduct,
-  postProduct
+  postProduct,
+  deleteProduct
 } from './ProductAction'

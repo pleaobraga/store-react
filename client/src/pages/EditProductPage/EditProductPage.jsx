@@ -13,7 +13,7 @@ import './EditProductPage.scss'
 const EditProductPage = () => {
   const dispatch = useDispatch()
   const pageContent = useSelector(state => state.product)
-  const { id, dbId } = useParams()
+  const { id, storeName } = useParams()
 
   React.useEffect(() => {
     if (id !== 'new') dispatch(getProduct(id))
@@ -23,7 +23,11 @@ const EditProductPage = () => {
     return (
       <div className="page page-edit-product">
         <h1 className="page-edit-product__title">{title}</h1>
-        <EditProduct currentProduct={product} isEditing={id !== 'new'} />
+        <EditProduct
+          currentProduct={product}
+          isEditing={id !== 'new'}
+          storeName={storeName}
+        />
       </div>
     )
   }
@@ -35,7 +39,7 @@ const EditProductPage = () => {
       <ErrorPage />
     ) : (
       contentPage({
-        product: { ProductListId: dbId },
+        product: {},
         title: 'Create new Product'
       })
     )

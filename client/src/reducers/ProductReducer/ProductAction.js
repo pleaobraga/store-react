@@ -57,6 +57,20 @@ export const postProductError = error => ({
   error
 })
 
+export const deleteProductStart = () => ({
+  type: constant.DELETE_PRODUCT
+})
+
+export const deleteProductSuccess = product => ({
+  type: constant.DELETE_PRODUCT_SUCCESS,
+  product
+})
+
+export const deleteProductError = error => ({
+  type: constant.DELETE_PRODUCT_ERROR,
+  error
+})
+
 export const getAllProducts = (storeName = 'store') => dispatch => {
   dispatch(getAllProductsStart())
 
@@ -84,13 +98,22 @@ export const putProduct = product => dispatch => {
     .catch(error => dispatch(putProductError(error)))
 }
 
-export const postProduct = product => dispatch => {
+export const postProduct = ({ product, storeName }) => dispatch => {
   dispatch(postProductStart())
 
   return axios
-    .post(`${constant.API_PRODUCT_URL}/product`, product)
+    .post(`${constant.API_PRODUCT_URL}/product`, { ...product, storeName })
     .then(response => dispatch(postProductSuccess(response.data)))
     .catch(error => {
       dispatch(postProductError(error))
     })
+}
+
+export const deleteProduct = id => dispatch => {
+  dispatch(deleteProductStart())
+
+  return axios
+    .delete(`${constant.API_PRODUCT_URL}/product/${id}`)
+    .then(response => dispatch(deleteProductSuccess(response.data)))
+    .catch(error => dispatch(deleteProductError(error)))
 }
