@@ -20,7 +20,7 @@ const EditProductPage = () => (
   <DynamicImport
     loadComponent={() =>
       import(
-        /*  webpackChunkName: "editProductPage" */ './pages/EditProductPage'
+        /*  webpackChunkName: "editProductPage"  */ './pages/EditProductPage'
       )
     }
     ErrorComponent={() => ErrorPage}
@@ -33,7 +33,7 @@ const Routes = () => {
     <BrowserRouter>
       <React.Suspense fallback={<ErrorPage />}>
         <Switch>
-          <Route path="/:id" component={EditProductPage} />
+          <Route path="/:dbId/:id" component={EditProductPage} />
           <Route exact path="/" component={SearchProductPage} />
           <Route component={ErrorPage} />
         </Switch>

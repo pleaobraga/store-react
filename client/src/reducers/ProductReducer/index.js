@@ -1,8 +1,8 @@
+export { default } from './ProductReducer'
+
 export {
-  default,
-  getAllProductsStart,
-  getAllProductsSuccess,
-  getAllProductsError,
   getAllProducts,
-  getProduct
-} from './ProductReducer'
+  getProduct,
+  putProduct,
+  postProduct
+} from './ProductAction'

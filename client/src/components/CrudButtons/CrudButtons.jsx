@@ -18,7 +18,11 @@ export const CrudButtons = ({ create, edit, del }) => {
       {edit && (
         <button
           key="edit"
-          className={`edit ${edit.className ? edit.className : ''} `}
+          disabled={edit.disabled}
+          className={`edit ${edit.className ? edit.className : ''} ${
+            edit.disabled ? 'disabled' : ''
+          } `}
+          onClick={edit.onClick}
         >
           <i className="material-icons edit__icon">create</i>
           <span>{edit.title ? edit.title : 'Edit'}</span>
@@ -27,7 +31,9 @@ export const CrudButtons = ({ create, edit, del }) => {
       {del && (
         <button
           key="delete"
+          disabled={del.disabled}
           className={`delete ${del.className ? del.className : ''} `}
+          onClick={del.onClick}
         >
           <i className="material-icons delete__icon">delete</i>
           <span>{del.title ? del.title : 'Delete'}</span>
@@ -41,17 +47,20 @@ CrudButtons.propTypes = {
   create: PropTypes.shape({
     className: PropTypes.string,
     title: PropTypes.string,
-    onClick: PropTypes.func
+    onClick: PropTypes.func,
+    disabled: PropTypes.bool
   }),
   edit: PropTypes.shape({
     className: PropTypes.string,
     title: PropTypes.string,
-    onClick: PropTypes.func
+    onClick: PropTypes.func,
+    disabled: PropTypes.bool
   }),
   del: PropTypes.shape({
     className: PropTypes.string,
     title: PropTypes.string,
-    onClick: PropTypes.func
+    onClick: PropTypes.func,
+    disabled: PropTypes.bool
   })
 }
 

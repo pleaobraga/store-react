@@ -14,7 +14,8 @@ export const handlerGet = async (request, h) => {
       include: [
         {
           model: Product,
-          as: 'Products'
+          as: 'Products',
+          attributes: { exclude: ['createdAt', 'updatedAt'] }
         }
       ]
     })
@@ -50,7 +51,7 @@ export const handlerPost = async (request, h) => {
   }
 
   try {
-    // Create new Board
+    // Create new Product List
     const newProductList = await ProductList.create({
       name: request.params.name
     })

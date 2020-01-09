@@ -10,7 +10,8 @@ export const handlerGet = async (request, h) => {
     product = await Product.findOne({
       where: {
         id: request.params.id
-      }
+      },
+      attributes: { exclude: ['createdAt', 'updatedAt'] }
     })
   } catch (err) {
     throw Boom.boomify(error)
@@ -58,6 +59,8 @@ export const handlerPut = async (request, h) => {
 
 export const handlerPost = async (request, h) => {
   const { payload } = request
+
+  console.log(payload)
 
   try {
     let newProduct = await Product.create({

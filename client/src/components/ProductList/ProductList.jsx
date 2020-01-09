@@ -5,7 +5,7 @@ import Product from '../Product'
 
 import './ProductList.scss'
 
-export const ProductList = ({ listItems }) => {
+export const ProductList = ({ listItems, onChange }) => {
   return (
     <List
       className="product-list"
@@ -29,6 +29,8 @@ export const ProductList = ({ listItems }) => {
         <>
           {listItems.map(item => (
             <Product
+              id={item.id}
+              onChange={onChange}
               key={item.id}
               name={item.name}
               quantity={item.quantity}
@@ -47,7 +49,8 @@ ProductList.defaultProps = {
 }
 
 ProductList.propTypes = {
-  listItems: PropTypes.arrayOf(PropTypes.shape(Product.propTypes))
+  listItems: PropTypes.arrayOf(PropTypes.shape(Product.propTypes)),
+  onChange: PropTypes.func
 }
 
 export default React.memo(ProductList)

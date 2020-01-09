@@ -15,7 +15,8 @@ const SearchProductPage = () => {
   const dispatch = useDispatch()
   const pageContent = useSelector(state => state.product)
   const [search, setSearch] = React.useState('')
-  const [filteredItems, setfilteredItems] = React.useState([])
+  const [filteredItems, setFilteredItems] = React.useState([])
+  const [productSelectedId, setProductSelectedId] = React.useState(null)
   const history = useHistory()
 
   React.useEffect(() => {
@@ -24,7 +25,7 @@ const SearchProductPage = () => {
 
   React.useEffect(() => {
     if (pageContent.productsList && pageContent.productsList.Products)
-      setfilteredItems(pageContent.productsList.Products)
+      setFilteredItems(pageContent.productsList.Products)
   }, [pageContent])
 
   const filterProducts = event => {
@@ -37,13 +38,33 @@ const SearchProductPage = () => {
 
       let filtered = productsList.Products.filter(item => reg.test(item.name))
 
-      setfilteredItems(filtered)
+      setFilteredItems(filtered)
     } else {
-      setfilteredItems(productsList.Products)
+      setFilteredItems(productsList.Products)
+    }
+  }
+
+  const onSelectItem = event => {
+    const allProducts = document.querySelectorAll('input')
+    if (event.target.checked === true) {
+      setProductSelectedId(event.target.id)
+
+      allProducts.forEach(product => {
+        if (product.id !== event.target.id) {
+          product.disabled = true
+        }
+      })
+    } else {
+      setProductSelectedId(null)
+      allProducts.forEach(product => {
+        product.disabled = false
+      })
     }
   }
 
   const contentPage = () => {
+    const { productsList } = pageContent
+
     return (
       <div className="page page-search-product">
         <h1 className="title">Products</h1>
@@ -57,15 +78,23 @@ const SearchProductPage = () => {
           <CrudButtons
             create={{
               onClick: () => {
-                history.push('/new')
+                history.push(`/${productsList.id}/new`)
               }
             }}
-            edit={{ onClick: () => {} }}
-            del={{ onClick: () => {} }}
+            edit={{
+              onClick: () => {
+                history.push(`/${productsList.id}/${productSelectedId}`)
+              },
+              disabled: productSelectedId ? false : true
+            }}
+            del={{
+              onClick: () => {},
+              disabled: productSelectedId ? false : true
+            }}
           />
         </div>
 
-        <ProductList listItems={filteredItems} />
+        <ProductList listItems={filteredItems} onChange={onSelectItem} />
       </div>
     )
   }

@@ -71,7 +71,13 @@ exports.register = (server, options) => {
       },
       description: 'Create product',
       validate: {
-        payload: productSchema,
+        payload: Joi.object({
+          name: Joi.string(),
+          quantity: Joi.number(),
+          price: Joi.string(),
+          currency: Joi.string(),
+          ProductListId: Joi.string()
+        }).label('ProductPostPaylad'),
         failAction: (request, h, error) => {
           throw error
         }

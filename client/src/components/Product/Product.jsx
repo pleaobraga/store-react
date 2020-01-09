@@ -1,12 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import ListItem from '../ListItem'
-import { Link } from 'react-router-dom'
 import './Product.scss'
 
-export const Product = ({ id, name, quantity, price, currency }) => {
+export const Product = ({ id, name, quantity, price, currency, onChange }) => {
   return (
     <ListItem
+      id={id}
+      onChange={onChange}
       className="product"
       details={
         <>
@@ -21,16 +22,6 @@ export const Product = ({ id, name, quantity, price, currency }) => {
           </p>
         </>
       }
-      actions={
-        <>
-          <i key="delete" className="material-icons">
-            delete
-          </i>
-          <Link key="edit" to={`/${id}`}>
-            <i className="material-icons">edit</i>
-          </Link>
-        </>
-      }
     />
   )
 }
@@ -40,7 +31,8 @@ Product.propTypes = {
   name: PropTypes.string.isRequired,
   quantity: PropTypes.number.isRequired,
   price: PropTypes.string.isRequired,
-  currency: PropTypes.string.isRequired
+  currency: PropTypes.string.isRequired,
+  onChange: PropTypes.func
 }
 
 export default React.memo(Product)

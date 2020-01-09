@@ -1,12 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { useHistory } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { putProduct, postProduct } from '../../reducers/ProductReducer'
+
 import { formatReal } from '../../utils/utils'
 import Product from '../Product'
 
 import './EditProduct.scss'
 
-export const EditProduct = ({ currentProduct }) => {
+export const EditProduct = ({ currentProduct, isEditing }) => {
+  const dispatch = useDispatch()
+
   const [product, setProduct] = React.useState({})
   const history = useHistory()
 
@@ -26,6 +31,12 @@ export const EditProduct = ({ currentProduct }) => {
 
   const save = event => {
     event.preventDefault()
+
+    if (isEditing) {
+      dispatch(putProduct(product))
+    } else {
+      dispatch(postProduct(product))
+    }
   }
 
   const cancel = event => {
@@ -105,7 +116,8 @@ EditProduct.defaultProps = {
 }
 
 EditProduct.propTypes = {
-  currentProduct: PropTypes.shape(Product.Prototype)
+  currentProduct: PropTypes.shape(Product.Prototype),
+  isEditing: PropTypes.bool.isRequired
 }
 
-export default React.memo(EditProduct)
+export default EditProduct
