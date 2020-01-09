@@ -4,7 +4,7 @@
   "description": "React Node store server ",
   "main": "server.js",
   "engines": {
-    "node": "12.13.1",
+    "node": "12.14.1",
     "yarn": "1.21.1"
   },
   "scripts": {

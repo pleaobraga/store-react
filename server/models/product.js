@@ -1,9 +1,13 @@
 module.exports = (sequelize, DataTypes) => {
-  const Product = sequelize.define('Card', {
+  const Product = sequelize.define('Product', {
     id: {
       type: DataTypes.UUID,
       primaryKey: true,
       defaultValue: DataTypes.UUIDV4
+    },
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false
     },
     quantity: {
       type: DataTypes.INTEGER,

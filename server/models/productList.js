@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const ProductList = sequelize.define('Board', {
+  const ProductList = sequelize.define('ProductList', {
     id: {
       type: DataTypes.UUID,
       primaryKey: true,

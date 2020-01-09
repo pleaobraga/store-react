@@ -6,7 +6,7 @@ import { dbHost, dbUser, dbPass, dbPort } from '../config/config'
 
 const basename = path.basename(__filename)
 
-const sequelize = new Sequelize('product_board', dbUser, dbPass, {
+const sequelize = new Sequelize('store', dbUser, dbPass, {
   host: dbHost,
   port: 5432,
   dialect: 'postgres',

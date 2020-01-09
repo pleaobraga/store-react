@@ -8,7 +8,9 @@ const manifest = {
     plugins: [
       { plugin: require('hapi-swagger') },
       { plugin: require('@hapi/inert') },
-      { plugin: require('@hapi/vision') }
+      { plugin: require('@hapi/vision') },
+      { plugin: require('../plugin/productList') },
+      { plugin: require('../plugin/product') }
     ]
   }
 }

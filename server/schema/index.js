@@ -4,6 +4,7 @@ import Joi from '@hapi/joi'
 
 export const productSchema = Joi.object({
   id: Joi.string(),
+  name: Joi.string(),
   quantity: Joi.number(),
   price: Joi.string(),
   currency: Joi.string(),
