@@ -28,12 +28,25 @@ const EditProductPage = () => (
   />
 )
 
+const NewProductPage = () => (
+  <DynamicImport
+    loadComponent={() =>
+      import(
+        /*  webpackChunkName: "newProductPage"  */ './pages/NewProductPage'
+      )
+    }
+    ErrorComponent={() => ErrorPage}
+    LoadingComponent={() => <Loading />}
+  />
+)
+
 const Routes = () => {
   return (
     <BrowserRouter>
       <React.Suspense fallback={<ErrorPage />}>
         <Switch>
-          <Route path="/:storeName/:id" component={EditProductPage} />
+          <Route exact path="/:storeName/new" component={NewProductPage} />
+          <Route exact path="/:storeName/:id" component={EditProductPage} />
           <Route exact path="/:storeName/" component={SearchProductPage} />
           <Route component={ErrorPage} />
         </Switch>

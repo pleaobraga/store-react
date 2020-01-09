@@ -47,6 +47,7 @@ export const EditProduct = ({ currentProduct, isEditing, storeName }) => {
 
   return (
     <form className="edit-product">
+      <p className="edit-product__error">This Product is already registered</p>
       <div className="edit-product__values">
         <div className="input-group">
           <label>Name</label>
