@@ -1,4 +1,6 @@
 import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { getAllProducts } from '../../reducers/ProductReducer'
 import Loading from '../../components/Loading'
 import ErrorPage from '../ErrorPage'
 import Filter from '../../components/Filter'
@@ -8,91 +10,73 @@ import { useHistory } from 'react-router-dom'
 import './SearchProductPage.scss'
 
 const SearchProductPage = () => {
+  const dispatch = useDispatch()
+  const pageContent = useSelector(state => state.product)
   const [search, setSearch] = React.useState('')
   const [filteredItems, setfilteredItems] = React.useState([])
   const history = useHistory()
 
-  const listItems = [
-    {
-      id: '0',
-      name: 'Product 1',
-      quantity: 1,
-      price: '10,00',
-      currency: 'R$'
-    },
-    {
-      id: '1',
-      name: 'Product 2',
-      quantity: 2,
-      price: '20,00',
-      currency: 'R$'
-    },
-    {
-      id: '2',
-      name: 'Product 3',
-      quantity: 3,
-      price: '30,00',
-      currency: 'R$'
-    },
-    {
-      id: '3',
-      name: 'Product 4',
-      quantity: 4,
-      price: '40,00',
-      currency: 'R$'
-    }
-  ]
+  React.useEffect(() => {
+    dispatch(getAllProducts(0))
+  }, [])
 
   React.useEffect(() => {
-    setfilteredItems(listItems)
-  }, [])
+    if (pageContent.productsList && pageContent.productsList.Products)
+      setfilteredItems(pageContent.productsList.Products)
+  }, [pageContent])
 
   const filterProducts = event => {
     setSearch(event.target.value)
 
+    const { productsList } = pageContent
+
     if (event.target.value !== '') {
       const reg = new RegExp(event.target.value, 'i')
 
-      let filtered = listItems.filter(item => reg.test(item.name))
+      let filtered = productsList.Products.filter(item => reg.test(item.name))
 
       setfilteredItems(filtered)
     } else {
-      setfilteredItems(listItems)
+      setfilteredItems(productsList.Products)
     }
   }
 
-  return (
-    <div className="page page-search-product">
-      <h1 className="title">Products</h1>
+  const contentPage = () => {
+    return (
+      <div className="page page-search-product">
+        <h1 className="title">Products</h1>
 
-      <div className="page-search-product__actions">
-        <Filter
-          value={search}
-          onChange={filterProducts}
-          placeholder="search for product by name"
-        />
-        <CrudButtons
-          create={{
-            onClick: () => {
-              history.push('/new')
-            }
-          }}
-          edit={{ onClick: () => {} }}
-          del={{ onClick: () => {} }}
-        />
+        <div className="page-search-product__actions">
+          <Filter
+            value={search}
+            onChange={filterProducts}
+            placeholder="search for product by name"
+          />
+          <CrudButtons
+            create={{
+              onClick: () => {
+                history.push('/new')
+              }
+            }}
+            edit={{ onClick: () => {} }}
+            del={{ onClick: () => {} }}
+          />
+        </div>
+
+        <ProductList listItems={filteredItems} />
       </div>
+    )
+  }
 
-      <ProductList listItems={filteredItems} />
-    </div>
+  const { errorContent, productsList } = pageContent
+
+  return errorContent ? (
+    <ErrorPage />
+  ) : productsList ? (
+    contentPage()
+  ) : (
+    <Loading />
   )
-
-  // return pageContent.errorContent ? (
-  //   <ErrorPage />
-  // ) : pageContent.content ? (
-  //   <div className="page page-content"></div>
-  // ) : (
-  //   <Loading />
-  // )
 }
 
 export default SearchProductPage
