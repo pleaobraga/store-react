@@ -40,7 +40,7 @@ const content = (state = initialState, action) => {
 
     case constant.DELETE_PRODUCT_SUCCESS: {
       const newProductList = state.productsList.Products.filter(
-        item => item.id !== action.product.id
+        item => item.id !== action.id
       )
 
       return {

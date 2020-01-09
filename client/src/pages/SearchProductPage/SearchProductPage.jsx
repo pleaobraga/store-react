@@ -26,8 +26,14 @@ const SearchProductPage = () => {
   }, [])
 
   React.useEffect(() => {
-    if (pageContent.productsList && pageContent.productsList.Products)
+    if (pageContent.productsList && pageContent.productsList.Products) {
       setFilteredItems(pageContent.productsList.Products)
+
+      const allProducts = document.querySelectorAll('input')
+      allProducts.forEach(product => {
+        product.disabled = false
+      })
+    }
   }, [pageContent])
 
   const filterProducts = event => {
