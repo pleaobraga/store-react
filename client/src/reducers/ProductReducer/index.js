@@ -3,5 +3,6 @@ export {
   getAllProductsStart,
   getAllProductsSuccess,
   getAllProductsError,
-  getAllProducts
+  getAllProducts,
+  getProduct
 } from './ProductReducer'

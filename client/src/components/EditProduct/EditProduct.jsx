@@ -1,11 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { useHistory } from 'react-router-dom'
 import { formatReal } from '../../utils/utils'
 import Product from '../Product'
+
 import './EditProduct.scss'
 
 export const EditProduct = ({ currentProduct }) => {
   const [product, setProduct] = React.useState({})
+  const history = useHistory()
 
   React.useEffect(() => {
     setProduct({ ...currentProduct })
@@ -27,6 +30,8 @@ export const EditProduct = ({ currentProduct }) => {
 
   const cancel = event => {
     event.preventDefault()
+
+    history.push('/')
   }
 
   return (

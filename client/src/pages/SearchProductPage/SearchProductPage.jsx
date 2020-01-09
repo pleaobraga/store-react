@@ -1,12 +1,14 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getAllProducts } from '../../reducers/ProductReducer'
+import { useHistory } from 'react-router-dom'
+
 import Loading from '../../components/Loading'
 import ErrorPage from '../ErrorPage'
 import Filter from '../../components/Filter'
 import CrudButtons from '../../components/CrudButtons'
 import ProductList from '../../components/ProductList'
-import { useHistory } from 'react-router-dom'
+
 import './SearchProductPage.scss'
 
 const SearchProductPage = () => {
