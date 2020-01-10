@@ -60,8 +60,6 @@ export const handlerPut = async (request, h) => {
 export const handlerPost = async (request, h) => {
   const { payload } = request
 
-  console.log(payload)
-
   try {
     const productList = await ProductList.findOne({
       where: {
