@@ -9,5 +9,3 @@ import DynamicImport from '../src/components/DynamicImport/DynamicImport.stories
 
 // Pages
 import ErrorPage from '../src/pages/ErrorPage/ErrorPage.stories.js'
-import WelcomePage from '../src/pages/WelcomePage/WelcomePage.stories.js'
-import ContentPage from '../src/pages/ContentPage/ContentPage.stories.js'

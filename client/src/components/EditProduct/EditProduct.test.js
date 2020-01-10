@@ -1,13 +1,45 @@
 import React from 'react'
-import { shallow } from 'enzyme'
-import EditProduct from './EditProduct'
+import { mount } from 'enzyme'
+import { BrowserRouter as Router } from 'react-router-dom'
+import { Provider } from 'react-redux'
 
-describe('Product', () => {
-  const product = shallow(
-    <EditProduct name="Name" quantity={2} price="20,10" currency="R$" />
+import EditProduct from './EditProduct'
+import {
+  mockStore,
+  initialStateRootReducer,
+  product
+} from '../../reducers/__mocks__/reduxMock'
+
+const setup = ({ props }) => {
+  const store = mockStore(initialStateRootReducer)
+
+  const contentPage = mount(
+    <Provider store={store}>
+      <Router>
+        <EditProduct
+          currentProduct={product}
+          storeName="0"
+          isEditing={props.isEditing}
+        />
+      </Router>
+    </Provider>
   )
 
-  it('render proprely', () => {
-    expect(product).toMatchSnapshot()
+  return contentPage
+}
+
+describe('Product', () => {
+  describe('Edit', () => {
+    const product = setup({ isEditing: true })
+    it('render proprely', () => {
+      expect(product).toMatchSnapshot()
+    })
+  })
+
+  describe('New Product', () => {
+    const product = setup({ isEditing: false })
+    it('render proprely', () => {
+      expect(product).toMatchSnapshot()
+    })
   })
 })

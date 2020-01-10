@@ -3,7 +3,7 @@ import { shallow } from 'enzyme'
 import EditProductPage from './EditProductPage'
 import { BrowserRouter as Router } from 'react-router-dom'
 
-describe('welcomePage', () => {
+describe('EditProductPage', () => {
   const editProductPage = shallow(
     <Router>
       <EditProductPage />

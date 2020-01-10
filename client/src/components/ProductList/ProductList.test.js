@@ -1,11 +1,17 @@
 import React from 'react'
 import { shallow } from 'enzyme'
+
 import ProductList from './ProductList'
+import { listItems } from '../../reducers/__mocks__/reduxMock'
 
 describe('ProductList', () => {
-  const listItem = shallow(<ProductList />)
+  it('render properly', () => {
+    const listItem = shallow(<ProductList listItems={listItems} />)
+    expect(listItem).toMatchSnapshot()
+  })
 
-  it('render proprely', () => {
+  it('render empty List', () => {
+    const listItem = shallow(<ProductList listItems={[]} />)
     expect(listItem).toMatchSnapshot()
   })
 })
