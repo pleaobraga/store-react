@@ -85,7 +85,9 @@ const SearchProductPage = () => {
             create={{
               onClick: () => {
                 history.push(`/${storeName}/new`)
-              }
+              },
+              className: pageContent.loadingActions ? 'loading' : '',
+              loader: pageContent.loadingActions
             }}
             edit={{
               onClick: () => {

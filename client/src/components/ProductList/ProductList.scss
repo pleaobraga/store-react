@@ -31,4 +31,13 @@
       }
     }
   }
+
+  .empty-message {
+    font-size: 3rem;
+    width: 100%;
+    text-align: center;
+    padding: 3rem;
+    border-top: 1px solid $black;
+    border-bottom: 1px solid $black;
+  }
 }

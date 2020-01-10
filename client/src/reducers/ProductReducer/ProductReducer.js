@@ -6,16 +6,20 @@ const initialState = {
   loadingContent: false,
   errorContent: false,
   registeredError: false,
-  updateProduct: false
+  updateProduct: false,
+  loadingActions: false
 }
 
 const content = (state = initialState, action) => {
   switch (action.type) {
     case constant.GET_ALL_PRODUCTS:
     case constant.GET_PRODUCT:
+      return { ...state, loadingContent: true }
+
     case constant.PUT_PRODUCT:
     case constant.POST_PRODUCT:
-      return { ...state, loadingContent: true, updateProduct: false }
+    case constant.DELETE_PRODUCT:
+      return { ...state, loadingActions: true, updateProduct: false }
 
     case constant.GET_ALL_PRODUCTS_SUCCESS:
       return {
@@ -40,7 +44,7 @@ const content = (state = initialState, action) => {
       return {
         ...state,
         product: action.product,
-        loadingContent: false,
+        loadingActions: false,
         errorContent: false,
         updateProduct: true
       }
@@ -53,7 +57,7 @@ const content = (state = initialState, action) => {
       return {
         ...state,
         productsList: { ...state.productsList, Products: newProductList },
-        loadingContent: false,
+        loadingActions: false,
         errorContent: false
       }
     }
@@ -66,7 +70,8 @@ const content = (state = initialState, action) => {
         product: action.error,
         loadingContent: false,
         errorContent: true,
-        updateProduct: false
+        updateProduct: false,
+        loadingActions: false
       }
 
     case constant.GET_ALL_PRODUCTS_ERROR:
@@ -91,7 +96,8 @@ const content = (state = initialState, action) => {
         loadingContent: false,
         errorContent,
         registeredError,
-        updateProduct: false
+        updateProduct: false,
+        loadingActions: false
       }
     }
 

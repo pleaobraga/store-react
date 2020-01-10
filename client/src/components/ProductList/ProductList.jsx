@@ -6,6 +6,28 @@ import Product from '../Product'
 import './ProductList.scss'
 
 export const ProductList = ({ listItems, onChange }) => {
+  const renderItemList = () => {
+    if (listItems.length > 0) {
+      return (
+        <>
+          {listItems.map(item => (
+            <Product
+              id={item.id}
+              onChange={onChange}
+              key={item.id}
+              name={item.name}
+              quantity={item.quantity}
+              price={item.price}
+              currency={item.currency}
+            />
+          ))}
+        </>
+      )
+    }
+
+    return <p className="empty-message">Empty Product List</p>
+  }
+
   return (
     <List
       className="product-list"
@@ -26,21 +48,7 @@ export const ProductList = ({ listItems, onChange }) => {
           </p>
         </>
       }
-      listItems={
-        <>
-          {listItems.map(item => (
-            <Product
-              id={item.id}
-              onChange={onChange}
-              key={item.id}
-              name={item.name}
-              quantity={item.quantity}
-              price={item.price}
-              currency={item.currency}
-            />
-          ))}
-        </>
-      }
+      listItems={renderItemList()}
     />
   )
 }

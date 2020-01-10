@@ -6,6 +6,7 @@ import { putProduct, postProduct } from '../../reducers/ProductReducer'
 
 import { formatReal } from '../../utils/utils'
 import Product from '../Product'
+import Loading from '../Loading'
 
 import './EditProduct.scss'
 
@@ -157,7 +158,7 @@ export const EditProduct = ({ currentProduct, isEditing, storeName }) => {
       </div>
       <div className="edit-product__actions">
         <button className="save" type="submit" onClick={save}>
-          Save
+          {pageContent.loadingActions ? <Loading color="#fff" /> : 'Save'}
         </button>
         <button className="cancel" onClick={cancel}>
           Cancel

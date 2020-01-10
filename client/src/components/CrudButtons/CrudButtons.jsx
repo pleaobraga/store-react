@@ -1,5 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+
+import Loading from '../Loading'
+
 import './CrudButtons.scss'
 
 export const CrudButtons = ({ create, edit, del }) => {
@@ -32,11 +35,19 @@ export const CrudButtons = ({ create, edit, del }) => {
         <button
           key="delete"
           disabled={del.disabled}
-          className={`delete ${del.className ? del.className : ''} `}
+          className={`delete ${del.className ? del.className : ''}`}
           onClick={del.onClick}
         >
-          <i className="material-icons delete__icon">delete</i>
-          <span>{del.title ? del.title : 'Delete'}</span>
+          {del.loader ? (
+            <div className="loader">
+              <Loading color="#fff" />
+            </div>
+          ) : (
+            <>
+              <i className="material-icons delete__icon">delete</i>
+              <span>{del.title ? del.title : 'Delete'}</span>
+            </>
+          )}
         </button>
       )}
     </div>
@@ -60,7 +71,8 @@ CrudButtons.propTypes = {
     className: PropTypes.string,
     title: PropTypes.string,
     onClick: PropTypes.func,
-    disabled: PropTypes.bool
+    disabled: PropTypes.bool,
+    loader: PropTypes.bool
   })
 }
 
