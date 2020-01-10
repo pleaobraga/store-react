@@ -1,8 +1,8 @@
 # Kanban Board - Server
 
-This is a Node based project and server the back end of the application
+Este é um projeto de servidor baseado em Node.js e o back-end do aplicativo
 
-it uses hapi as a node framework an its modules
+ele é utilizado o hapi.js como node framework. Foram utilizados os seguintes modulos na aplicação:
 
 - hapi
 - hapi/boom
@@ -13,33 +13,32 @@ it uses hapi as a node framework an its modules
 
 ## Installing dependencies
 
-To start the project use this command in your terminal
+Para iniciar o projeto, use este comando no seu terminal para instalar as depedencias
 
 ```
 yarn add
 ```
 
-in your terminal to install all dependencies
-
 ## Config the .env
 
-Before start the server do not forget to set up the .env file, with your db credentials, define the port ...
+Antes de iniciar o servidor, não esqueça de configurar o arquivo .env, com suas credenciais db, defina a porta ...
 
 ## Starting the project
 
-To start the project use this command in your terminal
+Para iniciar o projeto, use este comando no seu terminal.
+a porta default é a 4001
 
 ```
 yarn run start
 ```
 
-wait for a few seconds and the project will open a new tab in your browser automatically
+Se for a primeira vez que inicia o projeto não se esqueça de criar um db com o nome **store** e configurar corretamente o .env
 
 ## Project Architecture
 
 ### Root folder
 
-The project achichitecture was based on SOLID principles and the server folder is like:
+A arquitetura do projeto foi baseada nos princípios do SOLID e a pasta do servidor é da seguite forma:
 
 ```
 server
@@ -51,9 +50,9 @@ server
 
 ### Routes/plugins
 
-it was used the hapi/glue in this project so the plugin solution was implemented.
+foi usada a **hapi/glur** neste projeto para que a solução de plugin fosse implementada(a forma como o hapi trabalha).
 
-The plugins were plited into separate folders each one and its achitecture is:
+Os plugins foram organizados em pastas separadas cada um e sua arquitetura é:
 
 ```
 plugin
@@ -61,13 +60,13 @@ plugin
   index
 ```
 
-handler contains the handlers functions of the routes and the index exports the routes to the manifest
+handler contém as funções de manipulador das rotas e o índice exporta as rotas para o manifesto
 
 ### DataBase and validations
 
-It was used the **sequelized** library to handle with the data base, **hapi/joy** and **hapi/boom** to validate and handle the messages
+Utilizou-se a biblioteca **sequelized** para lidar com o banco de dados postgress, **hapi/joy** e **hapi/boom** para validar e manipular as mensagens
 
-it was created 2 different folders models, and schema to make the code more reusable.
+foram criados 2 tipos de pastas modelos e esquema para tornar o código mais reutilizável.
 
 ```
 server
@@ -78,11 +77,11 @@ server
     index
 ```
 
-the schema folder handle with the Joi schema, and the model the sequelize models
+a pasta do esquema lida com o Joi schema e o modelo que aplica o sequelize sobre os schemas
 
 ### Configurations
 
-there is one folder on the served to handle the configurations
+Existe uma pasta no servida para lidar com as configurações
 
 ```
 server
@@ -92,6 +91,37 @@ server
   .env
 ```
 
-the config file exports the .env configurations to the application and the manifests deal with routes configs based on **hapi/glue** especification
+o arquivo de configuração exporta as configurações .env para o aplicativo e os manifestos lidam com as configurações de rotas com base na especificação **hapi/ glue**
 
-it was used the babel to transpile the JS code, so the new javascrip features were applied into it, like import and export
+foi usado o babel para transpilar o código JS, para que os novos recursos javascript fossem aplicados, como importação e exportação
+
+### EXPLANATION
+
+A arquitetura foi modelada dessa forma para que fique facil a reutilização e em caso do projeto crescer é possivel seguir 2 caminhos,
+Utilizar esse projeto como um micro-serviço ou adicionar novas rotas schemas e models nas suas respectivas pastas
+
+## DOCUMENTATION
+
+### API DOCUMENTATION
+
+Para acessar a documentação das apis disponiveis para esse back-end rode a aplicação com o comando
+
+```
+yarn run start
+```
+
+depois acesse seu navegador e digite a url
+
+```
+localhost:{apiPort}/documentation
+```
+
+substitua apiPort pela porta escolhida, a default é 4001
+
+## FUTURE IMPROVMENTS
+
+- Melhorar validação do formulario
+- Implementar autenticaçao
+- Adcionar Husky
+- Adicionar typescript
+- Adicionar Docker

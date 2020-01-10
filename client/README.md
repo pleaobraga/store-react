@@ -1,8 +1,8 @@
-# React Scaffold
+# Kanban Board - Client
 
-This is a React based project, which I built from scratch, that helps you to quickly start your own new React Project.
+Esse projeto não utilizou o CReate React App mas sim [react/scarfold](https://github.com/pleaobraga/react-scaffold) criado por mim, se você quiser conhecê-lo melhor, verifique o link, explica sobre tudo.
 
-It is integrated with the newest libraries of:
+Este Projeto está integrado às mais recentes bibliotecas de:
 
 - Redux
 - React Router Dom
@@ -12,119 +12,67 @@ It is integrated with the newest libraries of:
 - Babel
 - Webpack
 
-There is a small implementation that can helps you to:
-
-- Improve the architecture of your project
-- Test you project with Jest and Enzyme
-- Increase the performance of your project using dynamic imports
-- See practical examples of the new \***\*React Hooks feature**
-- See some implementation of the new React-redux features like useSelector and useDispatch
-- Document your project with Storybook
-- Improve your code using Prettier and ESlint
-
 # Quick Start
 
 ## Installing dependencies
 
-To start the project use this command in your terminal
+Para iniciar o projeto, use este comando no seu terminal para instalar as depedencias
 
 ```
-npm i
+yarn add
 ```
-
-in your terminal to install all dependencies
 
 ## Starting the project
 
-To start the project use this command in your terminal
+Para iniciar o projeto, use este comando no seu terminal
 
 ```
-npm start
+yarn run start
 ```
 
-wait for a few seconds and the project will open a new tab in your browser automatically
+aguarde alguns segundos e o projeto abrirá uma nova guia no seu navegador automaticamente
 
-### Changing default port
-
-The default port is 8080 but if you want to change it to the port 3000 use this command
+Vá pa a url do seu navegador e digite o nome do productLIst cadastrado
 
 ```
-npm start -- --port=3000
+localhost/{productListName}
 ```
+
+dessa forma a aplicação funcionará perfeitamente
+
+### First time
+
+Não se esqueça de estar rodando o back-end e ter no anco de dados um product list
 
 ## Build the project
 
 ```
-npm run build
+yarn run build
 ```
-
-## Testing the project
-
-There are some commands to test the project
-
-### Test all project
-
-```
-npm run test
-```
-
-This command executes the Jest and test all **.test.js** files in your project
-
-### Watch Tests in the project
-
-```
-npm run test:watch
-```
-
-This command executes the Jest watchAll and observes all your tests
-
-### Update snapshots
-
-```
-npm run test:update
-```
-
-This command executes update all snapshots
-
-### Check the coverage
-
-```
-npm run test:coverage
-```
-
-This command executes Jest coverage and checks the coverage of your tests
 
 ## Using Storybok
 
-To start the Storybook use the command:
+O storybook é uma ducumentação de UI do front-end
+
+Para iniciar o Storybook, use o comando:
 
 ```
-npm run storybook
+yarn run storybook
 ```
 
-This will open a new webpage with Storybook running on port 9000
+Isso abrirá uma nova página da Web com o Storybook em execução na porta 9000
 
 ### Addons
 
-This storybook is already configured with some addons like Knobs, Actions, and Info.
-
-### Create a new story
-
-To create a new story you create the file {yourComponent}.stories.js
-Export the story and import it to **./.storybook/index.stories.js**
-You can check this file **./.storybook/index.stories.js** and other examples in the project to better understand the process.
-
-### Create a new story with Redux
-
-Check the **src/pages/ContentPage/ContentPage.stories.js** to see how to use the Redux with Storybook
+Este Storybook já está configurado com alguns complementos como Knobs, Actions e Info.
 
 ## Commits
 
-This project uses Husk.js and everytime you push the code it will run the pre-commit task to check the lint and run all tests, **so the code will only be pushed if it follows the lint rules and does not have any test errors.**
+Este projeto usa o Husk.js e toda vez que você envia o código, ele executa a tarefa de pré-confirmação para verificar o lint e executar todos os testes, **para que o código só seja enviado se seguir as regras lint e não tiver nenhum erro de teste.**
 
 ## Project Architecture
 
-The project achitechture is page based, and usin SOLID principles and the source folder is like:
+A arquitetura do projeto é baseada em página, e usando os princípios do SOLID e a pasta de origem é como:
 
 ```
 src
@@ -138,7 +86,7 @@ src
 
 ### Components Pages
 
-The architecture for the js files is like follow the example
+A arquitetura dos arquivos js é como seguir o exemplo
 
 ```
 components
@@ -150,39 +98,76 @@ components
     Component.jsx
 ```
 
-So each component has its on test, storie, jsx file and a index to export all of it.
+Portanto, cada componente tem seu arquivo test, storie, jsx e um índice para exportar tudo.
 
-This architechture is easy to mantain because to fix a component you can go in its folder and change ereything from it.
+Essa arquitetura é fácil de manter, pois para consertar um componente, você pode entrar em sua pasta e alterar tudo.
+
+### EXPLANATION
+
+A arquitetura foi modelada dessa forma para que fique facil a reutilização e em caso do projeto crescer é possivel seguir 2 caminhos,
+Utilizar esse projeto como um micro-front-end ou adicionar novas funcionalidades como componentes e paginas
+
+Foi-se criado componentes extremamente reutilizaveis como o **List**, **Filter** **ListItem** com o objetivo de garantir menos repetição de codigo e o mesmo stilo CSS caso seja utilizad futuramente por outras partes da aplicação
+
+Se não tivesze feito tudo do zero utilizaria as seguintes bibliotecas para poder me auxiliar
+
+- Material-ui
+- Formik
+
+o que aceleraria muito o prcesso de desenvolvimento
 
 ### Reducers
 
-For this example I did not split the reducer from the action creators because this project is too small, but if the project increase so slit reducer from actions.
+FOi utilizado o reducer para manter um codigo mais reutilizavel, preparado para o crescimento da aplicação, para essa primeira parte ele não se faz ecessario, mas pensado em um evolução do mesmo ele deria muito util.
 
 ### Utils
 
-In the utils folder I keep some functions and the contants files
+Na pasta utils, existe algumas funções e os arquivos de contants
+
+## TESTS
+
+Foram criados varios testes para a aplicação
+
+Para testar a aplicação utilize o comando
+
+```
+yarn run test
+```
+
+existem outros comando de teste que podem ser vistos melhor no projeto base [react/scarfold](https://github.com/pleaobraga/react-scaffold)
 
 ## Dynamic Import and Performance
 
-Nowadays we need to pay attention on performace, if we do not take care of it your project wold work but slowly and the client expetrience become very frustated.
+Atualmente, precisamos prestar atenção no desempenho, se não cuidarmos disso, seu projeto funcionará lentamente, e a expetriência do cliente ficará muito frustrada.
 
-I created in ths project a component called DynamicImport, it is integrate with the webpack so you can create diferent bundles with it and import them dynamically so you only will import the correct bundle for that page.
+Criei neste projeto um componente chamado DynamicImport, ele é integrado ao webpack para que você possa criar diferentes pacotes configuráveis com ele e importá-los dinamicamente, para importar apenas o pacote correto para essa página.
 
-It is applyed on the **routes.js** file, so each page you import will automaticaly create a new bandle performaticly bundle.
+Ele é aplicado no arquivo **routes.js**, para que cada página que você importe crie automaticamente um novo pacote configurável de bandle performaticly.
 
-Check on the routes file how to use it and check the DynamicImport component to see how it works
+Verifique no arquivo de rotas como usá-lo e verifique o componente DynamicImport para ver como ele funciona.
 
-This component is better than **React.lazy** because it can handle 3 diferents situation:
+Este componente é melhor que **React.lazy** porque pode lidar com três situações diferentes:
 
 - Loading
 - Error
 - Component
 
-diferent from **React.lazy** and **React.Suspense** which could only handle:
+diferente de **React.lazy** e **React.Suspense**, que só podiam lidar com:
 
 - Loading
 - Component
 
 ## Vendors
 
-The webpack is configurated to create a vendors file with common libraries like react, redux ...
+O webpack está configurado para criar um arquivo de fornecedores com bibliotecas comuns como react, redux ...
+
+
+## FUTURE IMPROVMENTS
+
+- Melhorar validação do formulario tanto vizual quanto funções de validação
+- Implementar autenticaçao
+- Adicionar typescript
+- Adicionar Docker
+- adicionar botoes de aplicar modificação ao deletar um produto
+- Melhorar layout das paginas
+- Escrever testes para o redux
