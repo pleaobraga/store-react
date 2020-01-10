@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { useHistory } from 'react-router-dom'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { putProduct, postProduct } from '../../reducers/ProductReducer'
 
 import { formatReal } from '../../utils/utils'
@@ -11,7 +11,7 @@ import './EditProduct.scss'
 
 export const EditProduct = ({ currentProduct, isEditing, storeName }) => {
   const dispatch = useDispatch()
-
+  const pageContent = useSelector(state => state.product)
   const [product, setProduct] = React.useState({})
   const history = useHistory()
 
@@ -29,13 +29,61 @@ export const EditProduct = ({ currentProduct, isEditing, storeName }) => {
     }
   }
 
+  const addErrorClass = className => {
+    document
+      .getElementsByClassName(className)[0]
+      .parentElement.classList.add('error')
+  }
+
+  const removeErrorClass = () => {
+    const allErrorsElements = document.querySelectorAll('.error')
+
+    allErrorsElements.forEach(element => {
+      element.classList.remove('error')
+    })
+  }
+
+  const isFormValid = () => {
+    let formValid = true
+
+    if (!product.name || product.name.length <= 0) {
+      addErrorClass('name')
+      formValid = false
+    }
+
+    if (
+      !product.quantity ||
+      product.quantity.length <= 0 ||
+      product.quantity < 0
+    ) {
+      addErrorClass('quantity')
+      formValid = false
+    }
+
+    if (!product.currency || product.currency.length <= 0) {
+      addErrorClass('currency')
+      formValid = false
+    }
+
+    if (!product.price || product.price.length <= 0) {
+      addErrorClass('price')
+      formValid = false
+    }
+
+    return formValid
+  }
+
   const save = event => {
     event.preventDefault()
 
-    if (isEditing) {
-      dispatch(putProduct(product))
-    } else {
-      dispatch(postProduct({ product, storeName }))
+    if (isFormValid()) {
+      removeErrorClass()
+
+      if (isEditing) {
+        dispatch(putProduct(product))
+      } else {
+        dispatch(postProduct({ product, storeName }))
+      }
     }
   }
 
@@ -47,7 +95,11 @@ export const EditProduct = ({ currentProduct, isEditing, storeName }) => {
 
   return (
     <form className="edit-product">
-      <p className="edit-product__error">This Product is already registered</p>
+      {pageContent.registeredError && (
+        <p className="edit-product__error">
+          This Product is already registered
+        </p>
+      )}
       <div className="edit-product__values">
         <div className="input-group">
           <label>Name</label>
@@ -96,7 +148,7 @@ export const EditProduct = ({ currentProduct, isEditing, storeName }) => {
         </div>
       </div>
       <div className="edit-product__actions">
-        <button className="save" onClick={save}>
+        <button className="save" type="submit" onClick={save}>
           Save
         </button>
         <button className="cancel" onClick={cancel}>
@@ -105,15 +157,6 @@ export const EditProduct = ({ currentProduct, isEditing, storeName }) => {
       </div>
     </form>
   )
-}
-
-EditProduct.defaultProps = {
-  currentProduct: {
-    name: '',
-    quantity: 1,
-    price: '0,00',
-    currency: 'R$'
-  }
 }
 
 EditProduct.propTypes = {

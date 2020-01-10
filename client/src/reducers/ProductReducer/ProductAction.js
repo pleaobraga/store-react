@@ -114,6 +114,6 @@ export const deleteProduct = id => dispatch => {
 
   return axios
     .delete(`${constant.API_PRODUCT_URL}/product/${id}`)
-    .then(response => dispatch(deleteProductSuccess(id)))
+    .then(() => dispatch(deleteProductSuccess(id)))
     .catch(error => dispatch(deleteProductError(error)))
 }

@@ -13,7 +13,7 @@ import './EditProductPage.scss'
 const EditProductPage = () => {
   const dispatch = useDispatch()
   const pageContent = useSelector(state => state.product)
-  const { id } = useParams()
+  const { id, storeName } = useParams()
 
   React.useEffect(() => {
     dispatch(getProduct(id))
@@ -23,7 +23,11 @@ const EditProductPage = () => {
     return (
       <div className="page page-edit-product">
         <h1 className="page-edit-product__title">{title}</h1>
-        <EditProduct currentProduct={product} isEditing={true} />
+        <EditProduct
+          currentProduct={product}
+          isEditing={true}
+          storeName={storeName}
+        />
       </div>
     )
   }

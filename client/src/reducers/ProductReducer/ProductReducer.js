@@ -4,7 +4,8 @@ const initialState = {
   productsList: null,
   product: null,
   loadingContent: false,
-  errorContent: false
+  errorContent: false,
+  registeredError: false
 }
 
 const content = (state = initialState, action) => {
@@ -18,7 +19,8 @@ const content = (state = initialState, action) => {
         ...state,
         productsList: action.productsList,
         loadingContent: false,
-        errorContent: false
+        errorContent: false,
+        registeredError: false
       }
 
     case constant.GET_PRODUCT_SUCCESS:
@@ -26,7 +28,8 @@ const content = (state = initialState, action) => {
         ...state,
         product: action.product,
         loadingContent: false,
-        errorContent: false
+        errorContent: false,
+        registeredError: false
       }
 
     case constant.PUT_PRODUCT_SUCCESS:
@@ -53,7 +56,7 @@ const content = (state = initialState, action) => {
 
     case constant.GET_PRODUCT_ERROR:
     case constant.PUT_PRODUCT_ERROR:
-    case constant.POST_PRODUCT_ERROR:
+    case constant.DELETE_PRODUCT_ERROR:
       return {
         ...state,
         product: action.error,
@@ -67,6 +70,24 @@ const content = (state = initialState, action) => {
         loadingContent: false,
         errorContent: true
       }
+
+    case constant.POST_PRODUCT_ERROR: {
+      let errorContent = false
+      let registeredError = false
+
+      if (action.error.response.status === 409) {
+        registeredError = true
+      } else {
+        errorContent = true
+      }
+
+      return {
+        ...state,
+        loadingContent: false,
+        errorContent,
+        registeredError
+      }
+    }
 
     default:
       return state
