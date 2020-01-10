@@ -19,8 +19,9 @@ exports[`CrudButtons render proprely 1`] = `
     </span>
   </button>
   <button
-    className="edit  "
+    className="edit   "
     key="edit"
+    onClick={[Function]}
   >
     <i
       className="material-icons edit__icon"
@@ -32,8 +33,9 @@ exports[`CrudButtons render proprely 1`] = `
     </span>
   </button>
   <button
-    className="delete  "
+    className="delete "
     key="delete"
+    onClick={[Function]}
   >
     <i
       className="material-icons delete__icon"

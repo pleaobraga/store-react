@@ -2,12 +2,28 @@
 
 exports[`ListItem render proprely 1`] = `
 <div
-  className="list-item "
+  className="list-item test"
 >
+  <input
+    disabled={false}
+    id="test"
+    onChange={[Function]}
+    type="checkbox"
+    value={false}
+  />
   <div
     className="list-item__details"
   >
-    <Component />
+    <div>
+      details
+    </div>
+  </div>
+  <div
+    className="list-item__actions"
+  >
+    <div>
+      actions
+    </div>
   </div>
 </div>
 `;

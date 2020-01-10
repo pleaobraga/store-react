@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ProductList render proprely 1`] = `
+exports[`ProductList render empty List 1`] = `
 <Memo(List)
   className="product-list"
   header={
@@ -27,6 +27,76 @@ exports[`ProductList render proprely 1`] = `
       </p>
     </React.Fragment>
   }
-  listItems={<React.Fragment />}
+  listItems={
+    <p
+      className="empty-message"
+    >
+      Empty Product List
+    </p>
+  }
+  title="Products"
+/>
+`;
+
+exports[`ProductList render properly 1`] = `
+<Memo(List)
+  className="product-list"
+  header={
+    <React.Fragment>
+      <p
+        className="header__name"
+      >
+        Name
+      </p>
+      <p
+        className="header__quantity"
+      >
+        Quantity
+      </p>
+      <p
+        className="header__quantity abbr"
+      >
+        Qty
+      </p>
+      <p
+        className="header__price"
+      >
+        Price
+      </p>
+    </React.Fragment>
+  }
+  listItems={
+    <React.Fragment>
+      <UNDEFINED
+        currency="R$"
+        id="0"
+        name="Product 1"
+        price="10,00"
+        quantity={1}
+      />
+      <UNDEFINED
+        currency="R$"
+        id="1"
+        name="Product 2"
+        price="20,00"
+        quantity={2}
+      />
+      <UNDEFINED
+        currency="R$"
+        id="2"
+        name="Product 3"
+        price="30,00"
+        quantity={3}
+      />
+      <UNDEFINED
+        currency="R$"
+        id="3"
+        name="Product 4"
+        price="40,00"
+        quantity={4}
+      />
+    </React.Fragment>
+  }
+  title="Products"
 />
 `;

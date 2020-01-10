@@ -1,558 +1,667 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Content Page should render content correctly 1`] = `
-<SearchProductPage>
-  <div
-    className="page page-search-product"
-  >
-    <h1
-      className="title"
-    >
-      Products
-    </h1>
-    <div
-      className="page-search-product__actions"
-    >
-      <Memo(Filter)
-        onChange={[Function]}
-        placeholder="search for product by name"
-        value=""
-      >
-        <div
-          className="filter"
-        >
-          <i
-            className="material-icons filter__icon"
-            key="search"
-          >
-            search
-          </i>
-          <input
-            className="filter__input"
-            onChange={[Function]}
-            placeholder="search for product by name"
-            value=""
-          />
-        </div>
-      </Memo(Filter)>
-      <Memo(CrudButtons)
-        create={
-          Object {
-            "onClick": [Function],
-          }
+exports[`SearchProductPage should render content page 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <BrowserRouter>
+    <Router
+      history={
+        Object {
+          "action": "POP",
+          "block": [Function],
+          "createHref": [Function],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
         }
-        del={
-          Object {
-            "onClick": [Function],
-          }
-        }
-        edit={
-          Object {
-            "onClick": [Function],
-          }
-        }
-      >
-        <div
-          className="crud-buttons"
-        >
-          <button
-            className="create  "
-            key="create"
-            onClick={[Function]}
-          >
-            <i
-              className="material-icons create__icon"
-            >
-              add_circle
-            </i>
-            <span>
-              Add
-            </span>
-          </button>
-          <button
-            className="edit  "
-            key="edit"
-          >
-            <i
-              className="material-icons edit__icon"
-            >
-              create
-            </i>
-            <span>
-              Edit
-            </span>
-          </button>
-          <button
-            className="delete  "
-            key="delete"
-          >
-            <i
-              className="material-icons delete__icon"
-            >
-              delete
-            </i>
-            <span>
-              Delete
-            </span>
-          </button>
-        </div>
-      </Memo(CrudButtons)>
-    </div>
-    <ProductList
-      listItems={
-        Array [
-          Object {
-            "currency": "R$",
-            "id": "0",
-            "name": "Product 1",
-            "price": "10,00",
-            "quantity": 1,
-          },
-          Object {
-            "currency": "R$",
-            "id": "1",
-            "name": "Product 2",
-            "price": "20,00",
-            "quantity": 2,
-          },
-          Object {
-            "currency": "R$",
-            "id": "2",
-            "name": "Product 3",
-            "price": "30,00",
-            "quantity": 3,
-          },
-          Object {
-            "currency": "R$",
-            "id": "3",
-            "name": "Product 4",
-            "price": "40,00",
-            "quantity": 4,
-          },
-        ]
       }
     >
-      <List
-        className="product-list"
-        header={
-          <React.Fragment>
-            <p
-              className="header__name"
-            >
-              Name
-            </p>
-            <p
-              className="header__quantity"
-            >
-              Quantity
-            </p>
-            <p
-              className="header__quantity abbr"
-            >
-              Qty
-            </p>
-            <p
-              className="header__price"
-            >
-              Price
-            </p>
-          </React.Fragment>
-        }
-        listItems={
-          <React.Fragment>
-            <UNDEFINED
-              currency="R$"
-              name="Product 1"
-              price="10,00"
-              quantity={1}
-            />
-            <UNDEFINED
-              currency="R$"
-              name="Product 2"
-              price="20,00"
-              quantity={2}
-            />
-            <UNDEFINED
-              currency="R$"
-              name="Product 3"
-              price="30,00"
-              quantity={3}
-            />
-            <UNDEFINED
-              currency="R$"
-              name="Product 4"
-              price="40,00"
-              quantity={4}
-            />
-          </React.Fragment>
-        }
-      >
-        <div
-          className="list product-list"
-        >
+      <SearchProductPage>
+        <Loading>
           <div
-            className="list__header"
+            className="loading undefined"
           >
-            <p
-              className="header__name"
-              key="Name"
+            <LoaderIcon
+              color="#298a95"
             >
-              Name
-            </p>
-            <p
-              className="header__quantity"
-              key="Name"
-            >
-              Quantity
-            </p>
-            <p
-              className="header__quantity abbr"
-              key="Name"
-            >
-              Qty
-            </p>
-            <p
-              className="header__price"
-              key="Name"
-            >
-              Price
-            </p>
+              <svg
+                className="lds-spinner"
+                fill="#298a95"
+                height="200px"
+                preserveAspectRatio="xMidYMid"
+                style={
+                  Object {
+                    "background": "none",
+                  }
+                }
+                viewBox="0 0 100 100"
+                width="200px"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
+              >
+                <g
+                  transform="rotate(0 50 50)"
+                >
+                  <rect
+                    fill="#298a95"
+                    height="12"
+                    rx="9.4"
+                    ry="4.8"
+                    width="6"
+                    x="47"
+                    y="24"
+                  >
+                    <animate
+                      attributeName="opacity"
+                      begin="-0.9166666666666666s"
+                      dur="1s"
+                      keyTimes="0;1"
+                      repeatCount="indefinite"
+                      values="1;0"
+                    />
+                  </rect>
+                </g>
+                <g
+                  transform="rotate(30 50 50)"
+                >
+                  <rect
+                    fill="#298a95"
+                    height="12"
+                    rx="9.4"
+                    ry="4.8"
+                    width="6"
+                    x="47"
+                    y="24"
+                  >
+                    <animate
+                      attributeName="opacity"
+                      begin="-0.8333333333333334s"
+                      dur="1s"
+                      keyTimes="0;1"
+                      repeatCount="indefinite"
+                      values="1;0"
+                    />
+                  </rect>
+                </g>
+                <g
+                  transform="rotate(60 50 50)"
+                >
+                  <rect
+                    fill="#298a95"
+                    height="12"
+                    rx="9.4"
+                    ry="4.8"
+                    width="6"
+                    x="47"
+                    y="24"
+                  >
+                    <animate
+                      attributeName="opacity"
+                      begin="-0.75s"
+                      dur="1s"
+                      keyTimes="0;1"
+                      repeatCount="indefinite"
+                      values="1;0"
+                    />
+                  </rect>
+                </g>
+                <g
+                  transform="rotate(90 50 50)"
+                >
+                  <rect
+                    fill="#298a95"
+                    height="12"
+                    rx="9.4"
+                    ry="4.8"
+                    width="6"
+                    x="47"
+                    y="24"
+                  >
+                    <animate
+                      attributeName="opacity"
+                      begin="-0.6666666666666666s"
+                      dur="1s"
+                      keyTimes="0;1"
+                      repeatCount="indefinite"
+                      values="1;0"
+                    />
+                  </rect>
+                </g>
+                <g
+                  transform="rotate(120 50 50)"
+                >
+                  <rect
+                    fill="#298a95"
+                    height="12"
+                    rx="9.4"
+                    ry="4.8"
+                    width="6"
+                    x="47"
+                    y="24"
+                  >
+                    <animate
+                      attributeName="opacity"
+                      begin="-0.5833333333333334s"
+                      dur="1s"
+                      keyTimes="0;1"
+                      repeatCount="indefinite"
+                      values="1;0"
+                    />
+                  </rect>
+                </g>
+                <g
+                  transform="rotate(150 50 50)"
+                >
+                  <rect
+                    fill="#298a95"
+                    height="12"
+                    rx="9.4"
+                    ry="4.8"
+                    width="6"
+                    x="47"
+                    y="24"
+                  >
+                    <animate
+                      attributeName="opacity"
+                      begin="-0.5s"
+                      dur="1s"
+                      keyTimes="0;1"
+                      repeatCount="indefinite"
+                      values="1;0"
+                    />
+                  </rect>
+                </g>
+                <g
+                  transform="rotate(180 50 50)"
+                >
+                  <rect
+                    fill="#298a95"
+                    height="12"
+                    rx="9.4"
+                    ry="4.8"
+                    width="6"
+                    x="47"
+                    y="24"
+                  >
+                    <animate
+                      attributeName="opacity"
+                      begin="-0.4166666666666667s"
+                      dur="1s"
+                      keyTimes="0;1"
+                      repeatCount="indefinite"
+                      values="1;0"
+                    />
+                  </rect>
+                </g>
+                <g
+                  transform="rotate(210 50 50)"
+                >
+                  <rect
+                    fill="#298a95"
+                    height="12"
+                    rx="9.4"
+                    ry="4.8"
+                    width="6"
+                    x="47"
+                    y="24"
+                  >
+                    <animate
+                      attributeName="opacity"
+                      begin="-0.3333333333333333s"
+                      dur="1s"
+                      keyTimes="0;1"
+                      repeatCount="indefinite"
+                      values="1;0"
+                    />
+                  </rect>
+                </g>
+                <g
+                  transform="rotate(240 50 50)"
+                >
+                  <rect
+                    fill="#298a95"
+                    height="12"
+                    rx="9.4"
+                    ry="4.8"
+                    width="6"
+                    x="47"
+                    y="24"
+                  >
+                    <animate
+                      attributeName="opacity"
+                      begin="-0.25s"
+                      dur="1s"
+                      keyTimes="0;1"
+                      repeatCount="indefinite"
+                      values="1;0"
+                    />
+                  </rect>
+                </g>
+                <g
+                  transform="rotate(270 50 50)"
+                >
+                  <rect
+                    fill="#298a95"
+                    height="12"
+                    rx="9.4"
+                    ry="4.8"
+                    width="6"
+                    x="47"
+                    y="24"
+                  >
+                    <animate
+                      attributeName="opacity"
+                      begin="-0.16666666666666666s"
+                      dur="1s"
+                      keyTimes="0;1"
+                      repeatCount="indefinite"
+                      values="1;0"
+                    />
+                  </rect>
+                </g>
+                <g
+                  transform="rotate(300 50 50)"
+                >
+                  <rect
+                    fill="#298a95"
+                    height="12"
+                    rx="9.4"
+                    ry="4.8"
+                    width="6"
+                    x="47"
+                    y="24"
+                  >
+                    <animate
+                      attributeName="opacity"
+                      begin="-0.08333333333333333s"
+                      dur="1s"
+                      keyTimes="0;1"
+                      repeatCount="indefinite"
+                      values="1;0"
+                    />
+                  </rect>
+                </g>
+                <g
+                  transform="rotate(330 50 50)"
+                >
+                  <rect
+                    fill="#298a95"
+                    height="12"
+                    rx="9.4"
+                    ry="4.8"
+                    width="6"
+                    x="47"
+                    y="24"
+                  >
+                    <animate
+                      attributeName="opacity"
+                      begin="0s"
+                      dur="1s"
+                      keyTimes="0;1"
+                      repeatCount="indefinite"
+                      values="1;0"
+                    />
+                  </rect>
+                </g>
+              </svg>
+            </LoaderIcon>
           </div>
-          <Memo(Product)
-            currency="R$"
-            key="0"
-            name="Product 1"
-            price="10,00"
-            quantity={1}
+        </Loading>
+      </SearchProductPage>
+    </Router>
+  </BrowserRouter>
+</Provider>
+`;
+
+exports[`SearchProductPage should render error page 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <BrowserRouter>
+    <Router
+      history={
+        Object {
+          "action": "POP",
+          "block": [Function],
+          "createHref": [Function],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
+    >
+      <SearchProductPage>
+        <Loading>
+          <div
+            className="loading undefined"
           >
-            <ListItem
-              actions={
-                <React.Fragment>
-                  <i
-                    className="material-icons"
-                  >
-                    delete
-                  </i>
-                  <ForwardRef
-                    to="/undefined"
-                  >
-                    <i
-                      className="material-icons"
-                    >
-                      edit
-                    </i>
-                  </ForwardRef>
-                </React.Fragment>
-              }
-              className="product"
-              details={
-                <React.Fragment>
-                  <p
-                    className="product__name"
-                  >
-                    Product 1
-                  </p>
-                  <p
-                    className="product__quantity"
-                  >
-                    1
-                  </p>
-                  <p
-                    className="product__price"
-                  >
-                    <span>
-                      R$
-                    </span>
-                     
-                    10,00
-                  </p>
-                </React.Fragment>
-              }
+            <LoaderIcon
+              color="#298a95"
             >
-              <div
-                className="list-item product"
+              <svg
+                className="lds-spinner"
+                fill="#298a95"
+                height="200px"
+                preserveAspectRatio="xMidYMid"
+                style={
+                  Object {
+                    "background": "none",
+                  }
+                }
+                viewBox="0 0 100 100"
+                width="200px"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
               >
-                <div
-                  className="list-item__details"
+                <g
+                  transform="rotate(0 50 50)"
                 >
-                  <p
-                    className="product__name"
-                    key="Product 1"
+                  <rect
+                    fill="#298a95"
+                    height="12"
+                    rx="9.4"
+                    ry="4.8"
+                    width="6"
+                    x="47"
+                    y="24"
                   >
-                    Product 1
-                  </p>
-                  <p
-                    className="product__quantity"
-                    key="1"
-                  >
-                    1
-                  </p>
-                  <p
-                    className="product__price"
-                    key="10,00"
-                  >
-                    <span>
-                      R$
-                    </span>
-                     
-                    10,00
-                  </p>
-                </div>
-              </div>
-            </ListItem>
-          </Memo(Product)>
-          <Memo(Product)
-            currency="R$"
-            key="1"
-            name="Product 2"
-            price="20,00"
-            quantity={2}
-          >
-            <ListItem
-              actions={
-                <React.Fragment>
-                  <i
-                    className="material-icons"
-                  >
-                    delete
-                  </i>
-                  <ForwardRef
-                    to="/undefined"
-                  >
-                    <i
-                      className="material-icons"
-                    >
-                      edit
-                    </i>
-                  </ForwardRef>
-                </React.Fragment>
-              }
-              className="product"
-              details={
-                <React.Fragment>
-                  <p
-                    className="product__name"
-                  >
-                    Product 2
-                  </p>
-                  <p
-                    className="product__quantity"
-                  >
-                    2
-                  </p>
-                  <p
-                    className="product__price"
-                  >
-                    <span>
-                      R$
-                    </span>
-                     
-                    20,00
-                  </p>
-                </React.Fragment>
-              }
-            >
-              <div
-                className="list-item product"
-              >
-                <div
-                  className="list-item__details"
+                    <animate
+                      attributeName="opacity"
+                      begin="-0.9166666666666666s"
+                      dur="1s"
+                      keyTimes="0;1"
+                      repeatCount="indefinite"
+                      values="1;0"
+                    />
+                  </rect>
+                </g>
+                <g
+                  transform="rotate(30 50 50)"
                 >
-                  <p
-                    className="product__name"
-                    key="Product 2"
+                  <rect
+                    fill="#298a95"
+                    height="12"
+                    rx="9.4"
+                    ry="4.8"
+                    width="6"
+                    x="47"
+                    y="24"
                   >
-                    Product 2
-                  </p>
-                  <p
-                    className="product__quantity"
-                    key="2"
-                  >
-                    2
-                  </p>
-                  <p
-                    className="product__price"
-                    key="20,00"
-                  >
-                    <span>
-                      R$
-                    </span>
-                     
-                    20,00
-                  </p>
-                </div>
-              </div>
-            </ListItem>
-          </Memo(Product)>
-          <Memo(Product)
-            currency="R$"
-            key="2"
-            name="Product 3"
-            price="30,00"
-            quantity={3}
-          >
-            <ListItem
-              actions={
-                <React.Fragment>
-                  <i
-                    className="material-icons"
-                  >
-                    delete
-                  </i>
-                  <ForwardRef
-                    to="/undefined"
-                  >
-                    <i
-                      className="material-icons"
-                    >
-                      edit
-                    </i>
-                  </ForwardRef>
-                </React.Fragment>
-              }
-              className="product"
-              details={
-                <React.Fragment>
-                  <p
-                    className="product__name"
-                  >
-                    Product 3
-                  </p>
-                  <p
-                    className="product__quantity"
-                  >
-                    3
-                  </p>
-                  <p
-                    className="product__price"
-                  >
-                    <span>
-                      R$
-                    </span>
-                     
-                    30,00
-                  </p>
-                </React.Fragment>
-              }
-            >
-              <div
-                className="list-item product"
-              >
-                <div
-                  className="list-item__details"
+                    <animate
+                      attributeName="opacity"
+                      begin="-0.8333333333333334s"
+                      dur="1s"
+                      keyTimes="0;1"
+                      repeatCount="indefinite"
+                      values="1;0"
+                    />
+                  </rect>
+                </g>
+                <g
+                  transform="rotate(60 50 50)"
                 >
-                  <p
-                    className="product__name"
-                    key="Product 3"
+                  <rect
+                    fill="#298a95"
+                    height="12"
+                    rx="9.4"
+                    ry="4.8"
+                    width="6"
+                    x="47"
+                    y="24"
                   >
-                    Product 3
-                  </p>
-                  <p
-                    className="product__quantity"
-                    key="3"
-                  >
-                    3
-                  </p>
-                  <p
-                    className="product__price"
-                    key="30,00"
-                  >
-                    <span>
-                      R$
-                    </span>
-                     
-                    30,00
-                  </p>
-                </div>
-              </div>
-            </ListItem>
-          </Memo(Product)>
-          <Memo(Product)
-            currency="R$"
-            key="3"
-            name="Product 4"
-            price="40,00"
-            quantity={4}
-          >
-            <ListItem
-              actions={
-                <React.Fragment>
-                  <i
-                    className="material-icons"
-                  >
-                    delete
-                  </i>
-                  <ForwardRef
-                    to="/undefined"
-                  >
-                    <i
-                      className="material-icons"
-                    >
-                      edit
-                    </i>
-                  </ForwardRef>
-                </React.Fragment>
-              }
-              className="product"
-              details={
-                <React.Fragment>
-                  <p
-                    className="product__name"
-                  >
-                    Product 4
-                  </p>
-                  <p
-                    className="product__quantity"
-                  >
-                    4
-                  </p>
-                  <p
-                    className="product__price"
-                  >
-                    <span>
-                      R$
-                    </span>
-                     
-                    40,00
-                  </p>
-                </React.Fragment>
-              }
-            >
-              <div
-                className="list-item product"
-              >
-                <div
-                  className="list-item__details"
+                    <animate
+                      attributeName="opacity"
+                      begin="-0.75s"
+                      dur="1s"
+                      keyTimes="0;1"
+                      repeatCount="indefinite"
+                      values="1;0"
+                    />
+                  </rect>
+                </g>
+                <g
+                  transform="rotate(90 50 50)"
                 >
-                  <p
-                    className="product__name"
-                    key="Product 4"
+                  <rect
+                    fill="#298a95"
+                    height="12"
+                    rx="9.4"
+                    ry="4.8"
+                    width="6"
+                    x="47"
+                    y="24"
                   >
-                    Product 4
-                  </p>
-                  <p
-                    className="product__quantity"
-                    key="4"
+                    <animate
+                      attributeName="opacity"
+                      begin="-0.6666666666666666s"
+                      dur="1s"
+                      keyTimes="0;1"
+                      repeatCount="indefinite"
+                      values="1;0"
+                    />
+                  </rect>
+                </g>
+                <g
+                  transform="rotate(120 50 50)"
+                >
+                  <rect
+                    fill="#298a95"
+                    height="12"
+                    rx="9.4"
+                    ry="4.8"
+                    width="6"
+                    x="47"
+                    y="24"
                   >
-                    4
-                  </p>
-                  <p
-                    className="product__price"
-                    key="40,00"
+                    <animate
+                      attributeName="opacity"
+                      begin="-0.5833333333333334s"
+                      dur="1s"
+                      keyTimes="0;1"
+                      repeatCount="indefinite"
+                      values="1;0"
+                    />
+                  </rect>
+                </g>
+                <g
+                  transform="rotate(150 50 50)"
+                >
+                  <rect
+                    fill="#298a95"
+                    height="12"
+                    rx="9.4"
+                    ry="4.8"
+                    width="6"
+                    x="47"
+                    y="24"
                   >
-                    <span>
-                      R$
-                    </span>
-                     
-                    40,00
-                  </p>
-                </div>
-              </div>
-            </ListItem>
-          </Memo(Product)>
-        </div>
-      </List>
-    </ProductList>
-  </div>
-</SearchProductPage>
+                    <animate
+                      attributeName="opacity"
+                      begin="-0.5s"
+                      dur="1s"
+                      keyTimes="0;1"
+                      repeatCount="indefinite"
+                      values="1;0"
+                    />
+                  </rect>
+                </g>
+                <g
+                  transform="rotate(180 50 50)"
+                >
+                  <rect
+                    fill="#298a95"
+                    height="12"
+                    rx="9.4"
+                    ry="4.8"
+                    width="6"
+                    x="47"
+                    y="24"
+                  >
+                    <animate
+                      attributeName="opacity"
+                      begin="-0.4166666666666667s"
+                      dur="1s"
+                      keyTimes="0;1"
+                      repeatCount="indefinite"
+                      values="1;0"
+                    />
+                  </rect>
+                </g>
+                <g
+                  transform="rotate(210 50 50)"
+                >
+                  <rect
+                    fill="#298a95"
+                    height="12"
+                    rx="9.4"
+                    ry="4.8"
+                    width="6"
+                    x="47"
+                    y="24"
+                  >
+                    <animate
+                      attributeName="opacity"
+                      begin="-0.3333333333333333s"
+                      dur="1s"
+                      keyTimes="0;1"
+                      repeatCount="indefinite"
+                      values="1;0"
+                    />
+                  </rect>
+                </g>
+                <g
+                  transform="rotate(240 50 50)"
+                >
+                  <rect
+                    fill="#298a95"
+                    height="12"
+                    rx="9.4"
+                    ry="4.8"
+                    width="6"
+                    x="47"
+                    y="24"
+                  >
+                    <animate
+                      attributeName="opacity"
+                      begin="-0.25s"
+                      dur="1s"
+                      keyTimes="0;1"
+                      repeatCount="indefinite"
+                      values="1;0"
+                    />
+                  </rect>
+                </g>
+                <g
+                  transform="rotate(270 50 50)"
+                >
+                  <rect
+                    fill="#298a95"
+                    height="12"
+                    rx="9.4"
+                    ry="4.8"
+                    width="6"
+                    x="47"
+                    y="24"
+                  >
+                    <animate
+                      attributeName="opacity"
+                      begin="-0.16666666666666666s"
+                      dur="1s"
+                      keyTimes="0;1"
+                      repeatCount="indefinite"
+                      values="1;0"
+                    />
+                  </rect>
+                </g>
+                <g
+                  transform="rotate(300 50 50)"
+                >
+                  <rect
+                    fill="#298a95"
+                    height="12"
+                    rx="9.4"
+                    ry="4.8"
+                    width="6"
+                    x="47"
+                    y="24"
+                  >
+                    <animate
+                      attributeName="opacity"
+                      begin="-0.08333333333333333s"
+                      dur="1s"
+                      keyTimes="0;1"
+                      repeatCount="indefinite"
+                      values="1;0"
+                    />
+                  </rect>
+                </g>
+                <g
+                  transform="rotate(330 50 50)"
+                >
+                  <rect
+                    fill="#298a95"
+                    height="12"
+                    rx="9.4"
+                    ry="4.8"
+                    width="6"
+                    x="47"
+                    y="24"
+                  >
+                    <animate
+                      attributeName="opacity"
+                      begin="0s"
+                      dur="1s"
+                      keyTimes="0;1"
+                      repeatCount="indefinite"
+                      values="1;0"
+                    />
+                  </rect>
+                </g>
+              </svg>
+            </LoaderIcon>
+          </div>
+        </Loading>
+      </SearchProductPage>
+    </Router>
+  </BrowserRouter>
+</Provider>
 `;

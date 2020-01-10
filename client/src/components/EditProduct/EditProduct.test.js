@@ -10,7 +10,7 @@ import {
   product
 } from '../../reducers/__mocks__/reduxMock'
 
-const setup = ({ props }) => {
+const setup = ({ isEditing }) => {
   const store = mockStore(initialStateRootReducer)
 
   const contentPage = mount(
@@ -19,7 +19,7 @@ const setup = ({ props }) => {
         <EditProduct
           currentProduct={product}
           storeName="0"
-          isEditing={props.isEditing}
+          isEditing={isEditing}
         />
       </Router>
     </Provider>
@@ -31,14 +31,14 @@ const setup = ({ props }) => {
 describe('Product', () => {
   describe('Edit', () => {
     const product = setup({ isEditing: true })
-    it('render proprely', () => {
+    it('Should render proprely', () => {
       expect(product).toMatchSnapshot()
     })
   })
 
   describe('New Product', () => {
     const product = setup({ isEditing: false })
-    it('render proprely', () => {
+    it('should render proprely', () => {
       expect(product).toMatchSnapshot()
     })
   })

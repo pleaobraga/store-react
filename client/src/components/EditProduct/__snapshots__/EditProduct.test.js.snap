@@ -1,84 +1,285 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Product render proprely 1`] = `
-<form
-  className="edit-product"
+exports[`Product Edit Should render proprely 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
 >
-  <div
-    className="edit-product__values"
-  >
-    <div
-      className="input-group"
+  <BrowserRouter>
+    <Router
+      history={
+        Object {
+          "action": "POP",
+          "block": [Function],
+          "createHref": [Function],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
     >
-      <label>
-        Name
-      </label>
-      <input
-        className="name"
-        name="name"
-        onChange={[Function]}
-        placeholder="Type the product name"
-        required={true}
-      />
-    </div>
-    <div
-      className="input-group"
+      <EditProduct
+        currentProduct={
+          Object {
+            "currency": "R$",
+            "name": "Name",
+            "price": "20,10",
+            "quantity": 2,
+          }
+        }
+        isEditing={true}
+        storeName="0"
+      >
+        <form
+          className="edit-product"
+        >
+          <div
+            className="edit-product__message"
+          />
+          <div
+            className="edit-product__values"
+          >
+            <div
+              className="input-group"
+            >
+              <label>
+                Name
+              </label>
+              <input
+                className="name"
+                name="name"
+                onChange={[Function]}
+                placeholder="Type the product name"
+                required={true}
+                value="Name"
+              />
+            </div>
+            <div
+              className="input-group"
+            >
+              <label>
+                Quantity
+              </label>
+              <input
+                className="quantity"
+                name="quantity"
+                onChange={[Function]}
+                placeholder="qty"
+                required={true}
+                type="number"
+                value={2}
+              />
+            </div>
+            <div
+              className="input-group"
+            >
+              <label>
+                Currency
+              </label>
+              <input
+                className="currency"
+                name="currency"
+                onChange={[Function]}
+                placeholder="$"
+                required={true}
+                value="R$"
+              />
+            </div>
+            <div
+              className="input-group"
+            >
+              <label>
+                Price
+              </label>
+              <input
+                className="price"
+                name="price"
+                onChange={[Function]}
+                required={true}
+                value="20,10"
+              />
+            </div>
+          </div>
+          <div
+            className="edit-product__actions"
+          >
+            <button
+              className="save"
+              onClick={[Function]}
+              type="submit"
+            >
+              Save
+            </button>
+            <button
+              className="cancel"
+              onClick={[Function]}
+            >
+              Cancel
+            </button>
+          </div>
+        </form>
+      </EditProduct>
+    </Router>
+  </BrowserRouter>
+</Provider>
+`;
+
+exports[`Product New Product should render proprely 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <BrowserRouter>
+    <Router
+      history={
+        Object {
+          "action": "POP",
+          "block": [Function],
+          "createHref": [Function],
+          "go": [Function],
+          "goBack": [Function],
+          "goForward": [Function],
+          "length": 1,
+          "listen": [Function],
+          "location": Object {
+            "hash": "",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+          "push": [Function],
+          "replace": [Function],
+        }
+      }
     >
-      <label>
-        Quantity
-      </label>
-      <input
-        className="quantity"
-        name="quantity"
-        onChange={[Function]}
-        placeholder="qty"
-        required={true}
-        type="number"
-      />
-    </div>
-    <div
-      className="input-group"
-    >
-      <label>
-        Currency
-      </label>
-      <input
-        className="currency"
-        name="currency"
-        onChange={[Function]}
-        placeholder="$"
-        required={true}
-      />
-    </div>
-    <div
-      className="input-group"
-    >
-      <label>
-        Price
-      </label>
-      <input
-        className="price"
-        name="price"
-        onChange={[Function]}
-        required={true}
-      />
-    </div>
-  </div>
-  <div
-    className="edit-product__actions"
-  >
-    <button
-      className="save"
-      onClick={[Function]}
-    >
-      Save
-    </button>
-    <button
-      className="cancel"
-      onClick={[Function]}
-    >
-      Cancel
-    </button>
-  </div>
-</form>
+      <EditProduct
+        currentProduct={
+          Object {
+            "currency": "R$",
+            "name": "Name",
+            "price": "20,10",
+            "quantity": 2,
+          }
+        }
+        isEditing={false}
+        storeName="0"
+      >
+        <form
+          className="edit-product"
+        >
+          <div
+            className="edit-product__message"
+          />
+          <div
+            className="edit-product__values"
+          >
+            <div
+              className="input-group"
+            >
+              <label>
+                Name
+              </label>
+              <input
+                className="name"
+                name="name"
+                onChange={[Function]}
+                placeholder="Type the product name"
+                required={true}
+                value="Name"
+              />
+            </div>
+            <div
+              className="input-group"
+            >
+              <label>
+                Quantity
+              </label>
+              <input
+                className="quantity"
+                name="quantity"
+                onChange={[Function]}
+                placeholder="qty"
+                required={true}
+                type="number"
+                value={2}
+              />
+            </div>
+            <div
+              className="input-group"
+            >
+              <label>
+                Currency
+              </label>
+              <input
+                className="currency"
+                name="currency"
+                onChange={[Function]}
+                placeholder="$"
+                required={true}
+                value="R$"
+              />
+            </div>
+            <div
+              className="input-group"
+            >
+              <label>
+                Price
+              </label>
+              <input
+                className="price"
+                name="price"
+                onChange={[Function]}
+                required={true}
+                value="20,10"
+              />
+            </div>
+          </div>
+          <div
+            className="edit-product__actions"
+          >
+            <button
+              className="save"
+              onClick={[Function]}
+              type="submit"
+            >
+              Save
+            </button>
+            <button
+              className="cancel"
+              onClick={[Function]}
+            >
+              Cancel
+            </button>
+          </div>
+        </form>
+      </EditProduct>
+    </Router>
+  </BrowserRouter>
+</Provider>
 `;

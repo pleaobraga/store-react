@@ -1,39 +1,44 @@
-jest.mock('../../utils/utils')
-import 'babel-polyfill'
 import React from 'react'
 import { mount } from 'enzyme'
+import { BrowserRouter as Router } from 'react-router-dom'
+import { Provider } from 'react-redux'
+
+import {
+  mockStore,
+  initialStateReducer,
+  listItems
+} from '../../reducers/__mocks__/reduxMock'
 import SearchProductPage from './SearchProductPage'
 
-const setup = () => {
-  const contentPage = mount(<SearchProductPage />)
+const setup = ({ state }) => {
+  const newState = {
+    product: {
+      ...initialStateReducer,
+      ...state
+    }
+  }
+
+  const store = mockStore(newState)
+
+  const contentPage = mount(
+    <Provider store={store}>
+      <Router>
+        <SearchProductPage />
+      </Router>
+    </Provider>
+  )
 
   return contentPage
 }
 
-describe('Content Page', () => {
-  // it('should render loading correctly', () => {
-  //   const contentPage = setup()
-
-  //   expect(contentPage).toMatchSnapshot()
-  // })
-
-  it('should render content correctly', () => {
-    const newState = {
-      content: { text: 'text', title: 'title' }
-    }
-
-    const contentPage = setup(newState)
-
-    expect(contentPage).toMatchSnapshot()
+describe('SearchProductPage', () => {
+  it('should render content page', () => {
+    const editProductPage = setup({ productsList: listItems })
+    expect(editProductPage).toMatchSnapshot()
   })
 
-  // it('should render error correctly', () => {
-  //   const newState = {
-  //     errorContent: true
-  //   }
-
-  //   const contentPage = setup(newState)
-
-  //   expect(contentPage).toMatchSnapshot()
-  // })
+  it('should render error page', () => {
+    const editProductPage = setup({ errorContent: true })
+    expect(editProductPage).toMatchSnapshot()
+  })
 })

@@ -2,24 +2,6 @@
 
 exports[`Product render proprely 1`] = `
 <Memo(ListItem)
-  actions={
-    <React.Fragment>
-      <i
-        className="material-icons"
-      >
-        delete
-      </i>
-      <ForwardRef
-        to="/undefined"
-      >
-        <i
-          className="material-icons"
-        >
-          edit
-        </i>
-      </ForwardRef>
-    </React.Fragment>
-  }
   className="product"
   details={
     <React.Fragment>
