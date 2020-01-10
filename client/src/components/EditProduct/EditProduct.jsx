@@ -95,11 +95,19 @@ export const EditProduct = ({ currentProduct, isEditing, storeName }) => {
 
   return (
     <form className="edit-product">
-      {pageContent.registeredError && (
-        <p className="edit-product__error">
-          This Product is already registered
-        </p>
-      )}
+      <div className="edit-product__message">
+        {pageContent.registeredError && (
+          <p className="edit-product__message--error">
+            This Product is already registered
+          </p>
+        )}
+        {pageContent.updateProduct && (
+          <p className="edit-product__message--saved">
+            This Product was updated successfully
+          </p>
+        )}
+      </div>
+
       <div className="edit-product__values">
         <div className="input-group">
           <label>Name</label>

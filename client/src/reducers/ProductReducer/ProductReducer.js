@@ -5,14 +5,17 @@ const initialState = {
   product: null,
   loadingContent: false,
   errorContent: false,
-  registeredError: false
+  registeredError: false,
+  updateProduct: false
 }
 
 const content = (state = initialState, action) => {
   switch (action.type) {
     case constant.GET_ALL_PRODUCTS:
     case constant.GET_PRODUCT:
-      return { ...state, loadingContent: true }
+    case constant.PUT_PRODUCT:
+    case constant.POST_PRODUCT:
+      return { ...state, loadingContent: true, updateProduct: false }
 
     case constant.GET_ALL_PRODUCTS_SUCCESS:
       return {
@@ -38,7 +41,8 @@ const content = (state = initialState, action) => {
         ...state,
         product: action.product,
         loadingContent: false,
-        errorContent: false
+        errorContent: false,
+        updateProduct: true
       }
 
     case constant.DELETE_PRODUCT_SUCCESS: {
@@ -61,7 +65,8 @@ const content = (state = initialState, action) => {
         ...state,
         product: action.error,
         loadingContent: false,
-        errorContent: true
+        errorContent: true,
+        updateProduct: false
       }
 
     case constant.GET_ALL_PRODUCTS_ERROR:
@@ -85,7 +90,8 @@ const content = (state = initialState, action) => {
         ...state,
         loadingContent: false,
         errorContent,
-        registeredError
+        registeredError,
+        updateProduct: false
       }
     }
 
