@@ -14,7 +14,7 @@ const content = (state = initialState, action) => {
   switch (action.type) {
     case constant.GET_ALL_PRODUCTS:
     case constant.GET_PRODUCT:
-      return { ...state, loadingContent: true }
+      return { ...state, loadingContent: true, updateProduct: false }
 
     case constant.PUT_PRODUCT:
     case constant.POST_PRODUCT:

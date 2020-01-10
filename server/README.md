@@ -118,7 +118,7 @@ localhost:{apiPort}/documentation
 
 substitua apiPort pela porta escolhida, a default é 4001
 
-## FUTURE IMPROVMENTS
+## FUTURE IMPROVEMENTS
 
 - Melhorar validação do formulario
 - Implementar autenticaçao
