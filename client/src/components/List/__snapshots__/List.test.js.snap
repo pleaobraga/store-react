@@ -7,6 +7,10 @@ exports[`List render proprely 1`] = `
   <div
     className="list__header"
   />
-  <Component />
+  <ul
+    className="list__items"
+  >
+    <Component />
+  </ul>
 </div>
 `;

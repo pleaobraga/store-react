@@ -13,7 +13,7 @@ export const ListItem = ({
   onChange
 }) => {
   return (
-    <div className={`list-item ${className ? className : ''}`}>
+    <li className={`list-item ${className ? className : ''}`}>
       <input
         id={id}
         value={selected}
@@ -23,7 +23,7 @@ export const ListItem = ({
       />
       <div className="list-item__details">{details}</div>
       {actions && <div className="list-item__actions">{actions}</div>}
-    </div>
+    </li>
   )
 }
 

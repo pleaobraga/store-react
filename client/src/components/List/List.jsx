@@ -8,7 +8,7 @@ export const List = ({ header, title, listItems, className }) => {
     <div className={`list ${className ? className : ''}`}>
       {title && <h1 className="list__title">{title}</h1>}
       <div className="list__header">{header}</div>
-      {listItems}
+      <ul className="list__items">{listItems}</ul>
     </div>
   )
 }
